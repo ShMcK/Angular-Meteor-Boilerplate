@@ -1,5 +1,9 @@
 {
   "useIndex": true,
   "indexFilePath": "client/index.scss",
-  "enableAutoprefixer": true
+  "enableAutoprefixer": true,
+  "autoprefixerOptions": {
+    "browsers": ["> 5%", "BlackBerry", "OperaMini"],
+    "cascade": false
+  }
 }
