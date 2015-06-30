@@ -1,5 +1,4 @@
 ///<reference path="../typings/typings.d.ts" />
-
 'use strict';
 
 angular.module('app')

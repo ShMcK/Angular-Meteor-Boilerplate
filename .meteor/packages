@@ -20,6 +20,7 @@ urigo:angular
 urigo:angular-ui-router
 angularjs:angular-sanitize
 
+# Material Design
 angular:angular-material
 
 # Pagination
@@ -30,5 +31,6 @@ angular:angular-material
 
 #Remove this & pub/sub
 insecure
+
 
 
