@@ -6,19 +6,31 @@
   <meta name="description" content="">
 </head>
 
-<body>
+<body layout="column">
+<section layout="row" flex>
 
-  <shmck-navbar></shmck-navbar>
+  <side-nav layout="column" md-is-locked-open="$media('gt-lg')"></side-nav>
 
-  <a ui-sref="main">Main</a>
-  <a ui-sref="secondary">Secondary</a>
+  <div layout="column" flex>
 
-<main>
-  <ui-view></ui-view>
-</main>
+    <shmck-navbar></shmck-navbar>
 
-<footer>
-  <shmck-footer></shmck-footer>
-</footer>
 
+    <!--<a ui-sref="main">Main</a>-->
+    <!--<a ui-sref="secondary">Secondary</a>-->
+
+
+    <main layout="column" flex>
+      <md-content flex layout-padding>
+        <p>Main Content Here</p>
+        <!--<ui-view></ui-view>-->
+      </md-content>
+    </main>
+
+    <footer layout="column" flex>
+      <!--<shmck-footer></shmck-footer>-->
+    </footer>
+
+  </div>
+</section>
 </body>

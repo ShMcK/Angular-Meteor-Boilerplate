@@ -1,6 +1,6 @@
 ///<reference path="../../../typings/typings.d.ts" />
 
-class ShmckMainController {
+class MainCtrl {
   componentName:String;
 
   constructor() {
@@ -8,13 +8,13 @@ class ShmckMainController {
   }
 }
 
-function shmckMain() {
+function main() {
   return {
     templateUrl: 'client/components/main/main.ng.html',
     controllerAs: 'main',
-    controller: ShmckMainController
+    controller: MainCtrl
   };
 }
 
 angular.module('app')
-  .directive('shmckMain', shmckMain);
+  .directive('shmckMain', main);

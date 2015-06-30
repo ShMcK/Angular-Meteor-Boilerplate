@@ -1,6 +1,6 @@
 ///<reference path="../../../typings/typings.d.ts" />
 
-class SecondaryController {
+class SecondaryCtrl {
   componentName:String;
 
   constructor() {
@@ -12,7 +12,7 @@ function secondary() {
   return {
     templateUrl: 'client/components/secondary/secondary.ng.html',
     controllerAs: 'secondary',
-    controller: SecondaryController
+    controller: SecondaryCtrl
   };
 }
 

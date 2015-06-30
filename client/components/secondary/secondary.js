@@ -1,15 +1,15 @@
 ///<reference path="../../../typings/typings.d.ts" />
-var SecondaryController = (function () {
-    function SecondaryController() {
+var SecondaryCtrl = (function () {
+    function SecondaryCtrl() {
         this.componentName = 'secondary';
     }
-    return SecondaryController;
+    return SecondaryCtrl;
 })();
 function secondary() {
     return {
         templateUrl: 'client/components/secondary/secondary.ng.html',
         controllerAs: 'secondary',
-        controller: SecondaryController
+        controller: SecondaryCtrl
     };
 }
 angular.module('app')

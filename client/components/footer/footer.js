@@ -1,17 +1,16 @@
 ///<reference path="../../../typings/typings.d.ts" />
-angular.module('app')
-    .directive('shmckFooter', shmckFooter);
-var Footer = (function () {
-    function Footer() {
-        this.componentName = 'footer';
+var FooterCtrl = (function () {
+    function FooterCtrl() {
     }
-    return Footer;
+    return FooterCtrl;
 })();
-function shmckFooter() {
+function footer() {
     return {
         templateUrl: 'client/components/footer/footer.ng.html',
         controllerAs: 'footer',
-        controller: Footer
+        controller: FooterCtrl
     };
 }
+angular.module('app')
+    .directive('shmckFooter', footer);
 //# sourceMappingURL=footer.js.map

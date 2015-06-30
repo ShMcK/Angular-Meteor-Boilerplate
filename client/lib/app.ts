@@ -19,3 +19,4 @@ if (Meteor.isCordova) {
   angular.element(document).ready(onReady);
 }
 
+
