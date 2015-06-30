@@ -5,3 +5,4 @@ Includes:
 * Angular-Material
 * Sass
 * Ui-Router
+* Material Icon Sets

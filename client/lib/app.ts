@@ -4,7 +4,9 @@
 angular.module('app', [
   'angular-meteor',
   'ui.router',
-  'ngMaterial'
+  'ngMaterial',
+  'ngSanitize',
+  'pascalprecht.translate'
 ]);
 
 function onReady() {
@@ -16,5 +18,4 @@ if (Meteor.isCordova) {
 } else {
   angular.element(document).ready(onReady);
 }
-
 

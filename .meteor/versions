@@ -69,6 +69,7 @@ spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
+tinque:angular-translate@2.7.0_2
 tracker@1.0.7
 twitter@1.1.4
 ui@1.0.6

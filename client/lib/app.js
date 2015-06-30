@@ -3,7 +3,9 @@
 angular.module('app', [
     'angular-meteor',
     'ui.router',
-    'ngMaterial'
+    'ngMaterial',
+    'ngSanitize',
+    'pascalprecht.translate'
 ]);
 function onReady() {
     angular.bootstrap(document, ['app']);

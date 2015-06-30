@@ -3,7 +3,6 @@ angular.module('app')
     .directive('shmckNavbar', shmckNavbar);
 var Navbar = (function () {
     function Navbar() {
-        this.componentName = 'navbar';
     }
     return Navbar;
 })();

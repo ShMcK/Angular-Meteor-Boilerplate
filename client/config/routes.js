@@ -1,4 +1,4 @@
-///<reference path="../typings/typings.d.ts" />
+///<reference path="../../typings/typings.d.ts" />
 'use strict';
 angular.module('app')
     .config(function ($stateProvider) {

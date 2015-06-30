@@ -23,6 +23,9 @@ angularjs:angular-sanitize
 # Material Design
 angular:angular-material
 
+# Translate
+tinque:angular-translate
+
 # Pagination
 #tmeasday:publish-counts
 #angularutils:pagination
@@ -31,6 +34,3 @@ angular:angular-material
 
 #Remove this & pub/sub
 insecure
-
-
-

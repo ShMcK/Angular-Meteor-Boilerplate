@@ -7,7 +7,7 @@ class Navbar {
   componentName:String;
 
   constructor() {
-    this.componentName = 'navbar';
+
   }
 }
 

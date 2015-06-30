@@ -1,4 +1,4 @@
-///<reference path="../typings/typings.d.ts" />
+///<reference path="../../typings/typings.d.ts" />
 
 angular.module("app")
   .config(themeIcons);
