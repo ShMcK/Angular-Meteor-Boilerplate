@@ -1,4 +1,5 @@
 ///<reference path="../typings/typings.d.ts" />
+
 declare var Items;
 
 Items = new Mongo.Collection('items');

@@ -1,3 +1,7 @@
+# Angular-Meteor-Boilerplate
 
-# Angular-Meteor-Material-TypeScript-Boilerplate
-Angular Meteor Boilerplate with Material &amp; TypeScript
+Includes:
+* TypeScript
+* Angular-Material
+* Sass
+* Ui-Router
