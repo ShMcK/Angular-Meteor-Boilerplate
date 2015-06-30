@@ -7,13 +7,19 @@
 </head>
 
 <body>
-<shmck-navbar></shmck-navbar>
+
+  <shmck-navbar></shmck-navbar>
+
+  <a ui-sref="main">Main</a>
+  <a ui-sref="secondary">Secondary</a>
 
 <main>
-  <shmck-main></shmck-main>
+  <!--<shmck-main></shmck-main>-->
+  <ui-view></ui-view>
 </main>
 
 <footer>
   <shmck-footer></shmck-footer>
 </footer>
+
 </body>

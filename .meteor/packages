@@ -18,13 +18,15 @@ accounts-ui
 
 # Angular
 urigo:angular
-pbastowski:angular-new-router
+urigo:angular-ui-router
 angularjs:angular-sanitize
 
-# Pagination
-tmeasday:publish-counts
-angularutils:pagination
-
-
-
 angular:angular-material
+
+# Pagination
+#tmeasday:publish-counts
+#angularutils:pagination
+
+
+
+

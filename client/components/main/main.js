@@ -1,17 +1,17 @@
 ///<reference path="../../../typings/typings.d.ts" />
-angular.module('app')
-    .directive('shmckMain', shmckMain);
-var Main = (function () {
-    function Main() {
+var ShmckMainController = (function () {
+    function ShmckMainController() {
         this.componentName = 'main';
     }
-    return Main;
+    return ShmckMainController;
 })();
 function shmckMain() {
     return {
         templateUrl: 'client/components/main/main.ng.html',
         controllerAs: 'main',
-        controller: Main
+        controller: ShmckMainController
     };
 }
+angular.module('app')
+    .directive('shmckMain', shmckMain);
 //# sourceMappingURL=main.js.map

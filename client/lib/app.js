@@ -1,6 +1,7 @@
 ///<reference path="../../typings/typings.d.ts" />
 angular.module('app', [
     'angular-meteor',
+    'ui.router',
     'ngMaterial'
 ]);
 function onReady() {
