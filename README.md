@@ -6,3 +6,4 @@ Includes:
 * Sass
 * Ui-Router
 * Material Icon Sets
+* Angular-Translate
