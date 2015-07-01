@@ -1,8 +1,12 @@
 /////<reference path="../typings/typings.d.ts" />
-Items = new Mongo.Collection('items');
-//
-var Schemas = {};
-//
+
+declare var Items:any,
+  SimpleSchema:any;
+
+Items = new Mongo.Collection<IItem>('items');
+
+var Schemas: any = {};
+
 Schemas.Item = new SimpleSchema({
   _id: {
     type: String,
@@ -56,11 +60,11 @@ Schemas.Item = new SimpleSchema({
     //editable: ['admin']
   }
 });
-//
-////Schema.Item.internationalize();
-//
+
+//Schema.Item.internationalize();
+
 Items.attachSchema(Schemas.Item);
-//
+
 //Items.allow({
 //  update: function ():boolean {},
 //  remove: function ():boolean {}

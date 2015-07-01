@@ -10,5 +10,6 @@ interface IItem {
   downVotes?: number;
   downVoters?: [string];
   author: string;
+  owner: string;
   userId: string;
 }

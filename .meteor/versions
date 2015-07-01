@@ -22,6 +22,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+dataflows:typescript-utils@0.1.5
 dburles:mongo-collection-instances@0.3.3
 ddp@1.1.0
 deps@1.0.7

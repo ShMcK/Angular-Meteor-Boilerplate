@@ -1,8 +1,6 @@
 /////<reference path="../typings/typings.d.ts" />
 Items = new Mongo.Collection('items');
-//
 var Schemas = {};
-//
 Schemas.Item = new SimpleSchema({
     _id: {
         type: String,
@@ -53,11 +51,8 @@ Schemas.Item = new SimpleSchema({
         optional: true
     }
 });
-//
-////Schema.Item.internationalize();
-//
+//Schema.Item.internationalize();
 Items.attachSchema(Schemas.Item);
-//
 //Items.allow({
 //  update: function ():boolean {},
 //  remove: function ():boolean {}

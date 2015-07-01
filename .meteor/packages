@@ -5,7 +5,12 @@
 # but you can also edit it by hand.
 
 meteor-platform
+
+# Sass
 fourseven:scss
+
+# TypeScript
+dataflows:typescript-utils
 
 # Accounts
 accounts-password
@@ -31,9 +36,9 @@ tinque:angular-translate
 #tmeasday:publish-counts
 #angularutils:pagination
 
-#Remove this & pub/sub
-insecure
-
 # Models
 aldeed:simple-schema
 aldeed:collection2
+
+#Remove this & pub/sub
+insecure
