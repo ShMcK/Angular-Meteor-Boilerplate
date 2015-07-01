@@ -1,0 +1,9 @@
+.sidebar {
+  &--menu-item {
+    margin: 0;
+    text-decoration: none !important;
+    &:hover {
+      background: darken(white, 5%);
+    }
+  }
+}
