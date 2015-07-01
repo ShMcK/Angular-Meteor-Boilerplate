@@ -5,6 +5,7 @@ interface IMenuItem {
   name: string;
   link: string;
   icon?: string;
+  image?: string;
 }
 
 class MenuCtrl {
@@ -12,10 +13,10 @@ class MenuCtrl {
 
   constructor() {
     this.items = [{
-      name: 'NAV.MAIN',
+      name: 'MAIN.TITLE',
       link: 'main'
     }, {
-      name: 'NAV.SECONDARY',
+      name: 'SECONDARY.TITLE',
       link: 'secondary'
     }]
   }

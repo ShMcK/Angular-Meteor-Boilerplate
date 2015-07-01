@@ -5,7 +5,7 @@ declare var Items: Mongo.Collection<IItem>,
 
 Items = new Mongo.Collection<IItem>('items');
 
-var Schemas: any = {};
+var Schemas:any = {};
 
 Schemas.Item = new SimpleSchema({
   _id: {

@@ -8,11 +8,9 @@ Meteor.startup(function () {
     // If no Items
     if (Items.find().count() === 0) {
         console.log('No Items');
-        // Add Items
-        var items = [];
-        items.forEach(function (item) {
-            Items.insert(item);
-        });
+    }
+    else {
+        console.log('Loading items...');
     }
 });
 //# sourceMappingURL=items.load.js.map

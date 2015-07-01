@@ -5,13 +5,18 @@
  *  @type {angular.module}
  */
 angular.module('app', [
-    /* dependencies */
+    /* Angular packages */
+    'ngAnimate',
+    'ngSanitize',
+    'ngTouch',
+    'ngAria',
+    'ngMessages',
+    'ngMaterial',
+    /* third party */
     'angular-meteor',
     'ui.router',
-    'ngMaterial',
-    'ngSanitize',
     'pascalprecht.translate',
-    /* components */
+    /* load components */
     'shmck.accounts',
     'shmck.layout',
     /* states */

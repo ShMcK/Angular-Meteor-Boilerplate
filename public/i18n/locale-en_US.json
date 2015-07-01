@@ -4,8 +4,10 @@
     "HEADER": "Header",
     "SUBHEADER": "Sub-Header"
   },
-  "NAV": {
-    "MAIN": "Main",
-    "SECONDARY": "Secondary"
+  "MAIN": {
+    "TITLE": "Main"
+  },
+  "SECONDARY": {
+    "TITLE": "Secondary"
   }
 }

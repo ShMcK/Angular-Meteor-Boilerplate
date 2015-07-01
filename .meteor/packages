@@ -42,3 +42,7 @@ aldeed:collection2
 
 #Remove this & pub/sub
 insecure
+angular:angular-animate
+angular:angular-touch
+angular:angular-aria
+angular:angular-messages
