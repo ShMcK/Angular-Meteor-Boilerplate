@@ -4,12 +4,14 @@ var ResetCtrl = (function () {
     function ResetCtrl($meteor, $state) {
         this.$meteor = $meteor;
         this.$state = $state;
-        this.email = '';
+        this.credential = {
+            email: ''
+        };
         this.error = '';
     }
     ResetCtrl.prototype.register = function () {
         var _this = this;
-        this.$meteor.forgotPassword(this.email)
+        this.$meteor.forgotPassword(this.credential)
             .then(function () {
             _this.$state.go('main');
         }, function (e) {

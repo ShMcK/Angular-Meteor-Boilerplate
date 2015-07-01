@@ -5,7 +5,7 @@ class LoginCtrl {
   credentials:ICredentials;
   error:string;
 
-  constructor(public $meteor, public $state) {
+  constructor(public $meteor:angular.meteor.IMeteorService, public $state:angular.ui.IStateService) {
     this.credentials = {
       email: '',
       password: ''
@@ -24,7 +24,7 @@ class LoginCtrl {
 }
 LoginCtrl.$inject = ['$meteor', '$state'];
 
-function login () {
+function login ():angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/login.ng.html',
     controllerAs: 'lc',

@@ -3,7 +3,7 @@
 
 class PageCtrl{
   toggleLeft: any;
-  constructor(public $mdUtil, public $mdSidenav, public $log) {
+  constructor(public $mdUtil, public $mdSidenav:angular.material.MDSidenavService, public $log:angular.ILogService) {
     this.toggleLeft = buildToggler('left');
 
     function buildToggler(navID) {

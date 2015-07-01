@@ -1,6 +1,9 @@
-///<reference path="../typings/typings.d.ts" />
+/////<reference path="../typings/typings.d.ts" />
 Items = new Mongo.Collection('items');
-Schema.Item = new SimpleSchema({
+//
+var Schemas = {};
+//
+Schemas.Item = new SimpleSchema({
     _id: {
         type: String,
         optional: true
@@ -12,12 +15,10 @@ Schema.Item = new SimpleSchema({
     title: {
         type: String,
         optional: false,
-        editableBy: ['member', 'admin']
     },
     body: {
         type: String,
         optional: true,
-        editableBy: ['member', 'admin']
     },
     viewCount: {
         type: Number,
@@ -49,14 +50,16 @@ Schema.Item = new SimpleSchema({
     },
     userId: {
         type: String,
-        optional: true,
-        editable: ['admin']
+        optional: true
     }
 });
-//Schema.Item.internationalize();
-Items.attachSchema(Schema.Item);
+//
+////Schema.Item.internationalize();
+//
+Items.attachSchema(Schemas.Item);
+//
 //Items.allow({
 //  update: function ():boolean {},
 //  remove: function ():boolean {}
-//}); 
+//});
 //# sourceMappingURL=items.js.map

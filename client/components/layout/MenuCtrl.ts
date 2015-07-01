@@ -6,7 +6,7 @@ interface IMenuItem {
   link: string;
 }
 
-class MenuCtrl{
+class MenuCtrl {
   items: IMenuItem[];
   constructor() {
     this.items = [{

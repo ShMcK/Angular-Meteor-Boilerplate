@@ -1,4 +1,5 @@
 ///<reference path="../../../typings/typings.d.ts" />
+'use strict';
 var SecondaryCtrl = (function () {
     function SecondaryCtrl() {
         this.componentName = 'secondary';

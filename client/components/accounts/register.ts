@@ -5,7 +5,7 @@ class RegisterCtrl {
   credentials:ICredentials;
   error:string;
 
-  constructor(public $meteor, public $state) {
+  constructor(public $meteor:angular.meteor.IMeteorService, public $state:angular.ui.IStateService) {
     this.credentials = {
       email: '',
       password: ''
@@ -24,7 +24,7 @@ class RegisterCtrl {
 }
 RegisterCtrl.$inject = ['$meteor', '$state'];
 
-function register () {
+function register ():angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/register.ng.html',
     controllerAs: 'rc',

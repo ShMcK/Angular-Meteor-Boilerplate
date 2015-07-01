@@ -1,4 +1,5 @@
 ///<reference path="../../../typings/typings.d.ts" />
+'use strict';
 
 class SecondaryCtrl {
   componentName:String;
@@ -8,7 +9,7 @@ class SecondaryCtrl {
   }
 }
 
-function secondary() {
+function secondary():angular.IDirective {
   return {
     templateUrl: 'client/components/secondary/secondary.ng.html',
     controllerAs: 'secondary',

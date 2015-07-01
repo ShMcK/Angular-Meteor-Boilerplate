@@ -3,7 +3,7 @@
 
 class NavbarCtrl {}
 
-function shmckNavbar() {
+function shmckNavbar():angular.IDirective {
   return {
     templateUrl: 'client/components/layout/navbar/navbar.ng.html',
     controllerAs: 'navbar',
@@ -12,5 +12,4 @@ function shmckNavbar() {
 }
 
 angular.module('app')
-  .directive('shmckNavbar', shmckNavbar)
-  .service('Sidebar', ['$mdUtil', '$log', '$mdSidenav']);
+  .directive('shmckNavbar', shmckNavbar);

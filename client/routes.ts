@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('app')
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider:angular.ui.IStateProvider) {
     $stateProvider
       .state('main', {
         url: '/',

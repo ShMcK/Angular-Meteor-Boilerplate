@@ -1,7 +1,7 @@
 ///<reference path="../../../../typings/typings.d.ts" />
 
 class SidebarCtrl {
-  constructor(public $mdSidenav, public $log) {
+  constructor(public $mdSidenav:angular.material.MDSidenavService, public $log:angular.ILogService) {
   }
   close() {
     this.$mdSidenav('left').close()
@@ -12,7 +12,7 @@ class SidebarCtrl {
 }
 SidebarCtrl.$inject = ['$mdSidenav', '$log'];
 
-function sidebar() {
+function sidebar():angular.IDirective {
   return {
     templateUrl: 'client/components/layout/sidebar/sidebar.ng.html',
     controllerAs: 'sideNav',

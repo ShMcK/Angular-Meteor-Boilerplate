@@ -9,7 +9,7 @@ class MainCtrl {
   }
 }
 
-function main() {
+function main():angular.IDirective {
   return {
     templateUrl: 'client/components/main/main.ng.html',
     controllerAs: 'main',

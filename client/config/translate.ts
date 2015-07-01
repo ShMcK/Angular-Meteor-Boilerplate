@@ -1,7 +1,7 @@
 ///<reference path="../../typings/typings.d.ts" />
 'use strict';
 
-function translate($translateProvider) {
+function translate($translateProvider:angular.translate.ITranslateProvider) {
   $translateProvider.useLoader('languageLoader', {});
   $translateProvider.preferredLanguage('en_US');
 
@@ -9,8 +9,12 @@ function translate($translateProvider) {
   $translateProvider.useSanitizeValueStrategy('sanitize');
 }
 
-function languageLoader($http, $q) {
-  return function (options) {
+interface ILanguageOptions {
+  key: string;
+}
+
+function languageLoader($http:angular.IHttpService, $q:angular.IQService) {
+  return function (options:ILanguageOptions) {
     var deferred = $q.defer();
 
     $http({

@@ -13,6 +13,5 @@ function shmckNavbar() {
     };
 }
 angular.module('app')
-    .directive('shmckNavbar', shmckNavbar)
-    .service('Sidebar', ['$mdUtil', '$log', '$mdSidenav']);
+    .directive('shmckNavbar', shmckNavbar);
 //# sourceMappingURL=navbar.js.map

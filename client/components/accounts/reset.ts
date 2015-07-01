@@ -1,17 +1,23 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
 
+interface IPasswordResetCredential {
+  email: string;
+}
+
 class ResetCtrl {
-  email:string;
+  credential: IPasswordResetCredential;
   error:string;
 
-  constructor(public $meteor, public $state) {
-    this.email = '';
+  constructor(public $meteor:angular.meteor.IMeteorService, public $state:angular.ui.IStateService) {
+    this.credential = {
+      email: ''
+    };
     this.error = '';
   }
 
   register() {
-    this.$meteor.forgotPassword(this.email)
+    this.$meteor.forgotPassword(this.credential)
       .then(() => {
         this.$state.go('main');
       }, (e) => {
@@ -21,7 +27,7 @@ class ResetCtrl {
 }
 ResetCtrl.$inject = ['$meteor', '$state'];
 
-function resetPw() {
+function resetPw():angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/reset-password.ng.html',
     controllerAs: 'rpc',

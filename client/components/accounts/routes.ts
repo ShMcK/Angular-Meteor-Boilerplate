@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('app')
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider:angular.ui.IStateProvider) {
     /* Accounts */
     $stateProvider
       .state('login', {
@@ -20,7 +20,7 @@ angular.module('app')
       .state('logout', {
         url: '/logout',
         resolve: {
-          "logout": ['$meteor', '$state', function ($meteor, $state) {
+          "logout": ['$meteor', '$state', function ($meteor:angular.meteor.IMeteorService, $state:angular.ui.IStateService) {
             return $meteor.logout().then(function () {
               $state.go('main');
             }, function (e) {

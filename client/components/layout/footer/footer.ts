@@ -2,7 +2,7 @@
 
 class FooterCtrl {}
 
-function footer() {
+function footer():angular.IDirective {
   return {
     templateUrl: 'client/components/layout/footer/footer.ng.html',
     controllerAs: 'footer',
