@@ -1,4 +1,6 @@
-# Angular-Meteor-Boilerplate
+# Angular-Meteor-Boilerplate (WIP)
+
+A modular full-featured full-stack boilerplate for Angular-Meteor.
 
 Includes:
 * TypeScript
@@ -6,4 +8,5 @@ Includes:
 * Sass
 * Ui-Router
 * Material Icon Sets
-* Angular-Translate
+* Angular-Translate (i18n)
+* Accounts Setup
