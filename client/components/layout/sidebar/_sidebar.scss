@@ -1,11 +1,13 @@
 .sidebar {
+  &--list {
+    a {
+        text-decoration: none;
+    }
+  }
   &--menu-item {
     margin: 0;
     &:hover {
       background: darken(white, 5%);
-    }
-    a {
-      text-decoration: none;
     }
   }
 }

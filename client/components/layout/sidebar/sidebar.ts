@@ -14,7 +14,7 @@ SidebarCtrl.$inject = ['$mdSidenav', '$log'];
 
 function sidebar() {
   return {
-    templateUrl: 'client/components/page/sidebar/sidebar.ng.html',
+    templateUrl: 'client/components/layout/sidebar/sidebar.ng.html',
     controllerAs: 'sideNav',
     controller: SidebarCtrl
   };

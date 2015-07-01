@@ -7,7 +7,7 @@ var NavbarCtrl = (function () {
 })();
 function shmckNavbar() {
     return {
-        templateUrl: 'client/components/page/navbar/navbar.ng.html',
+        templateUrl: 'client/components/layout/navbar/navbar.ng.html',
         controllerAs: 'navbar',
         controller: NavbarCtrl
     };

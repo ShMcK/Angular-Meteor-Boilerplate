@@ -6,7 +6,7 @@ var FooterCtrl = (function () {
 })();
 function footer() {
     return {
-        templateUrl: 'client/components/page/footer/footer.ng.html',
+        templateUrl: 'client/components/layout/footer/footer.ng.html',
         controllerAs: 'footer',
         controller: FooterCtrl
     };

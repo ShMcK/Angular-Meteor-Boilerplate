@@ -1,4 +1,5 @@
 ///<reference path="../../../typings/typings.d.ts" />
+'use strict';
 
 class MainCtrl {
   componentName:String;

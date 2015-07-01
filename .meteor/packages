@@ -13,7 +13,8 @@ accounts-facebook
 accounts-twitter
 accounts-google
 accounts-base
-accounts-ui
+#accounts-ui
+accounts-ui-unstyled
 
 # Angular
 urigo:angular
@@ -30,7 +31,7 @@ tinque:angular-translate
 #tmeasday:publish-counts
 #angularutils:pagination
 
-
-
 #Remove this & pub/sub
 insecure
+
+aldeed:template-extension

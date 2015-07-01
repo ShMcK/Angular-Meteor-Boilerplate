@@ -2,17 +2,6 @@
 'use strict';
 
 angular.module('app')
-  .config(function ($stateProvider) {
-    $stateProvider
-      .state('main', {
-        url: '/',
-        template: `<shmck-main></shmck-main>`
-      })
-      .state('secondary', {
-        url: '/secondary',
-        template: '<secondary></secondary>'
-      });
-  })
   .config(function ($urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');

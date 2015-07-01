@@ -7,6 +7,12 @@
       <span translate>TITLE</span>
     </h2>
     <span flex></span>
+    <!-- accounts -->
+    <md-button ui-sref="login" ng-hide="$root.currentUser">Login</md-button>
+    <md-button ui-sref="register" ng-hide="$root.currentUser">Sign up</md-button>
+    <div ng-show="$root.currentUser">{{ $root.currentUser }}</div>
+    <md-button ui-sref="logout" ng-show="$root.currentUser">Logout</md-button>
+
     <md-button class="md-icon-button" aria-label="More">
       <md-icon md-svg-icon="navigation:more_vert"></md-icon>
     </md-button>

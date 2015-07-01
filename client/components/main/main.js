@@ -1,4 +1,5 @@
 ///<reference path="../../../typings/typings.d.ts" />
+'use strict';
 var MainCtrl = (function () {
     function MainCtrl() {
         this.componentName = 'main';
