@@ -20,5 +20,9 @@ function sidebar():angular.IDirective {
   };
 }
 
-angular.module('app')
+/**
+ * Sidebar
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
   .directive('shmckSidebar', sidebar);

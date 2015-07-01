@@ -12,6 +12,10 @@ function shmckNavbar() {
         controller: NavbarCtrl
     };
 }
-angular.module('app')
+/**
+ * Navbar
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
     .directive('shmckNavbar', shmckNavbar);
 //# sourceMappingURL=navbar.js.map

@@ -31,6 +31,9 @@ function login ():angular.IDirective {
     controller: LoginCtrl
   };
 }
-
-angular.module('app')
+/**
+ * Login Component
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts')
   .directive('shmckLogin', login);

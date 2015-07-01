@@ -29,6 +29,10 @@ function login() {
         controller: LoginCtrl
     };
 }
-angular.module('app')
+/**
+ * Login Component
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts')
     .directive('shmckLogin', login);
 //# sourceMappingURL=login.js.map

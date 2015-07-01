@@ -29,6 +29,10 @@ function register() {
         controller: RegisterCtrl
     };
 }
-angular.module('app')
+/**
+ * Register component
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts')
     .directive('shmckRegister', register);
 //# sourceMappingURL=register.js.map

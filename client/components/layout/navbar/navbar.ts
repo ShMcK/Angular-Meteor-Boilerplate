@@ -11,5 +11,9 @@ function shmckNavbar():angular.IDirective {
   };
 }
 
-angular.module('app')
+/**
+ * Navbar
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
   .directive('shmckNavbar', shmckNavbar);

@@ -10,5 +10,9 @@ function footer():angular.IDirective {
   };
 }
 
-angular.module('app')
+/**
+ * Footer
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
   .directive('shmckFooter', footer);

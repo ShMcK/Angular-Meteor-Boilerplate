@@ -21,6 +21,10 @@ function sidebar() {
         controller: SidebarCtrl
     };
 }
-angular.module('app')
+/**
+ * Sidebar
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
     .directive('shmckSidebar', sidebar);
 //# sourceMappingURL=sidebar.js.map

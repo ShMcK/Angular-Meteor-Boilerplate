@@ -32,5 +32,9 @@ function register ():angular.IDirective {
   };
 }
 
-angular.module('app')
+/**
+ * Register component
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts')
   .directive('shmckRegister', register);

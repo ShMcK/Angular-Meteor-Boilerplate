@@ -1,8 +1,11 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
-angular.module('app')
+/**
+ * Account Routes
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts')
     .config(function ($stateProvider) {
-    /* Accounts */
     $stateProvider
         .state('login', {
         url: '/login',
@@ -19,7 +22,8 @@ angular.module('app')
         .state('logout', {
         url: '/logout',
         resolve: {
-            "logout": ['$meteor', '$state', function ($meteor, $state) {
+            'logout': ['$meteor', '$state',
+                function ($meteor, $state) {
                     return $meteor.logout().then(function () {
                         $state.go('main');
                     }, function (e) {

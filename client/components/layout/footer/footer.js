@@ -11,6 +11,10 @@ function footer() {
         controller: FooterCtrl
     };
 }
-angular.module('app')
+/**
+ * Footer
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
     .directive('shmckFooter', footer);
 //# sourceMappingURL=footer.js.map

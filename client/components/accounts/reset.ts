@@ -35,4 +35,8 @@ function resetPw():angular.IDirective {
   };
 }
 
-angular.module('app').directive('shmckResetPw', resetPw);
+/**
+ * Password Reset Component
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts').directive('shmckResetPw', resetPw);

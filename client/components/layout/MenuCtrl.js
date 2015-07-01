@@ -12,5 +12,10 @@ var MenuCtrl = (function () {
     }
     return MenuCtrl;
 })();
-angular.module('app').controller('MenuCtrl', MenuCtrl);
+/**
+ * Menu Items
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
+    .controller('MenuCtrl', MenuCtrl);
 //# sourceMappingURL=MenuCtrl.js.map

@@ -28,5 +28,9 @@ function resetPw() {
         controller: ResetCtrl
     };
 }
-angular.module('app').directive('shmckResetPw', resetPw);
+/**
+ * Password Reset Component
+ * @type {angular.module}
+ */
+angular.module('shmck.accounts').directive('shmckResetPw', resetPw);
 //# sourceMappingURL=reset.js.map

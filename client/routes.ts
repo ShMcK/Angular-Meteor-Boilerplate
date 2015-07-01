@@ -1,6 +1,10 @@
 ///<reference path="../typings/typings.d.ts" />
 'use strict';
 
+/**
+ * Routes
+ * @type {angular.module}
+ */
 angular.module('app')
   .config(function ($stateProvider:angular.ui.IStateProvider) {
     $stateProvider

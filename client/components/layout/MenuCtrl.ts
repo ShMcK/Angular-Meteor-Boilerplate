@@ -4,10 +4,12 @@
 interface IMenuItem {
   name: string;
   link: string;
+  icon?: string;
 }
 
 class MenuCtrl {
-  items: IMenuItem[];
+  items:IMenuItem[];
+
   constructor() {
     this.items = [{
       name: 'NAV.MAIN',
@@ -19,4 +21,9 @@ class MenuCtrl {
   }
 }
 
-angular.module('app').controller('MenuCtrl', MenuCtrl);
+/**
+ * Menu Items
+ * @type {angular.module}
+ */
+angular.module('shmck.layout')
+  .controller('MenuCtrl', MenuCtrl);
