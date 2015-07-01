@@ -34,4 +34,6 @@ tinque:angular-translate
 #Remove this & pub/sub
 insecure
 
-aldeed:template-extension
+# Models
+aldeed:simple-schema
+aldeed:collection2
