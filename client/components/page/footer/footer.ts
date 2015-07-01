@@ -1,10 +1,10 @@
-///<reference path="../../../typings/typings.d.ts" />
+///<reference path="../../../../typings/typings.d.ts" />
 
 class FooterCtrl {}
 
 function footer() {
   return {
-    templateUrl: 'client/components/footer/footer.ng.html',
+    templateUrl: 'client/components/page/footer/footer.ng.html',
     controllerAs: 'footer',
     controller: FooterCtrl
   };
