@@ -2,6 +2,10 @@
 'use strict';
 declare var Items: Mongo.Collection<IItem>;
 
+/**
+ * Items Methods
+ * @type {meteor.methods}
+ */
 Meteor.methods({
 
   'addItem': function (item:IItem) {
@@ -14,7 +18,7 @@ Meteor.methods({
     // add fields
     item.owner = Meteor.userId();
     item.createdAt = new Date();
-    // add other fields
+    // todo: add other fields
 
     Items.insert(item);
   },

@@ -1,6 +1,6 @@
-/////<reference path="../typings/typings.d.ts" />
+///<reference path="../typings/typings.d.ts" />
 
-declare var Items:any,
+declare var Items: Mongo.Collection<IItem>,
   SimpleSchema:any;
 
 Items = new Mongo.Collection<IItem>('items');
@@ -63,9 +63,14 @@ Schemas.Item = new SimpleSchema({
 
 //Schema.Item.internationalize();
 
+
 Items.attachSchema(Schemas.Item);
 
-//Items.allow({
-//  update: function ():boolean {},
-//  remove: function ():boolean {}
-//});
+/**
+ * Security Restriction
+ * @type {Mongo.Collection.allow}
+ */
+Items.allow({
+  update: function () { return false; },
+  remove: function () { return false; }
+});

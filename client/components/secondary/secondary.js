@@ -13,6 +13,10 @@ function secondary() {
         controller: SecondaryCtrl
     };
 }
-angular.module('app')
+/**
+ * Secondary
+ * @type {angular.module}
+ */
+angular.module('shmck.secondary')
     .directive('secondary', secondary);
 //# sourceMappingURL=secondary.js.map

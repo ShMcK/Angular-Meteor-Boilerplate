@@ -17,5 +17,9 @@ function secondary():angular.IDirective {
   };
 }
 
-angular.module('app')
+/**
+ * Secondary
+ * @type {angular.module}
+ */
+angular.module('shmck.secondary')
   .directive('secondary', secondary);

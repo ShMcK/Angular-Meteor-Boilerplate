@@ -17,5 +17,10 @@ function main():angular.IDirective {
   };
 }
 
-angular.module('app')
+/**
+ * Main
+ * default home page
+ * @type {angular.module}
+ */
+angular.module('shmck.main')
   .directive('shmckMain', main);

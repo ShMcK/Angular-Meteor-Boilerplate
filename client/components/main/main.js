@@ -13,6 +13,11 @@ function main() {
         controller: MainCtrl
     };
 }
-angular.module('app')
+/**
+ * Main
+ * default home page
+ * @type {angular.module}
+ */
+angular.module('shmck.main')
     .directive('shmckMain', main);
 //# sourceMappingURL=main.js.map

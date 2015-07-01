@@ -3,11 +3,20 @@
 
 declare var Items:Mongo.Collection<IItem>;
 
+/**
+ *  Load Items
+ *  @type {meteor.startup}
+ */
 Meteor.startup(function () {
+  // If no Items
   if (Items.find().count() === 0) {
     console.log('No Items');
-    var items = [];
-    items.forEach(function (item) {
+
+    // Add Items
+    var items:IItem[] = [
+      // items here
+    ];
+    items.forEach(function (item:IItem) {
       Items.insert(item);
     });
   }

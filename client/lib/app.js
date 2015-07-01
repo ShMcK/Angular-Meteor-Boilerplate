@@ -1,22 +1,32 @@
 ///<reference path="../../typings/typings.d.ts" />
 'use strict';
 /**
- * Main App Module
+ *  App Module
  *  @type {angular.module}
  */
 angular.module('app', [
+    /* dependencies */
     'angular-meteor',
     'ui.router',
     'ngMaterial',
     'ngSanitize',
     'pascalprecht.translate',
-    /* modules */
+    /* components */
     'shmck.accounts',
-    'shmck.layout'
+    'shmck.layout',
+    /* states */
+    'shmck.main',
+    'shmck.secondary'
 ]);
+/**
+ * Bootstrap App (ng-app)
+ */
 function onReady() {
     angular.bootstrap(document, ['app']);
 }
+/**
+ * Deliver Mobile Version
+ */
 if (Meteor.isCordova) {
     angular.element(document).on('deviceReady', onReady);
 }

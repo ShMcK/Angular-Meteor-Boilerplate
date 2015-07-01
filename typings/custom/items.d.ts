@@ -1,3 +1,5 @@
+///<reference path="../typings.d.ts" />
+
 interface IItem {
   id?: string;
   createdAt?: Date;
