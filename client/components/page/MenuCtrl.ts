@@ -10,10 +10,10 @@ class MenuCtrl{
   items: IMenuItem[];
   constructor() {
     this.items = [{
-      name: 'Main',
+      name: 'NAV.MAIN',
       link: 'main'
     }, {
-      name: 'Secondary',
+      name: 'NAV.SECONDARY',
       link: 'secondary'
     }]
   }

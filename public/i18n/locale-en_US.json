@@ -1,3 +1,11 @@
 {
-  "title": "Some Title"
+  "TITLE": "Some Title",
+  "SIDENAV": {
+    "HEADER": "Header",
+    "SUBHEADER": "Sub-Header"
+  },
+  "NAV": {
+    "MAIN": "Main",
+    "SECONDARY": "Secondary"
+  }
 }

@@ -3,10 +3,10 @@
 var MenuCtrl = (function () {
     function MenuCtrl() {
         this.items = [{
-                name: 'Main',
+                name: 'NAV.MAIN',
                 link: 'main'
             }, {
-                name: 'Secondary',
+                name: 'NAV.SECONDARY',
                 link: 'secondary'
             }];
     }

@@ -1,11 +1,11 @@
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
   <md-toolbar class="md-theme-indigo">
-    <h1 class="md-toolbar-tools">Sidenav Left</h1>
+    <h1 class="md-toolbar-tools" translate>SIDENAV.HEADER</h1>
   </md-toolbar>
   <md-list ng-controller="MenuCtrl as menu">
-    <md-subheader class="md-no-sticky">SubHeader</md-subheader>
+    <!--<md-subheader class="md-no-sticky">{{ 'SIDENAV.SUBHEADER' }}</md-subheader>-->
     <md-list-item ng-repeat="item in menu.items" class="sidebar--menu-item">
-        <a ui-sref="{{item.link}}">{{item.name}}</a>
+        <a ui-sref="{{item.link}}" translate>{{item.name}}</a>
       </md-list-item>
     <!--<md-divider></md-divider>-->
   </md-list>
