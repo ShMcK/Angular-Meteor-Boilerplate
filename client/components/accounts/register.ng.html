@@ -2,9 +2,14 @@
   <span flex></span>
   <md-whiteframe layout="column" flex="50">
     <div layout="row" layout-align="space-around center">
-      <div>Login with:</div>
-      <md-button>Twitter</md-button>
-      <md-button>Facebook</md-button>
+
+      <md-button>
+        <md-icon md-svg-src="icons/ionicons/social-twitter.svg"></md-icon>
+      </md-button>
+      <md-button>
+        <md-icon md-svg-icon="icons/ionicons/social-facebook.svg"></md-icon>
+      </md-button>
+
     </div>
     <div ng-show="rc.error" class="md-warn">
       <small>{{ rc.error }}</small>

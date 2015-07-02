@@ -30,6 +30,11 @@ function languageLoader($http:angular.IHttpService, $q:angular.IQService) {
   };
 }
 
+
+/**
+ * Angular Translate Setup
+ * @type {angular.module}
+ */
 angular.module('app')
   .config(translate)
   .factory('languageLoader', languageLoader);

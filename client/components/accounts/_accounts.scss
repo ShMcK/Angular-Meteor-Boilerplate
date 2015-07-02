@@ -1,0 +1,20 @@
+.accounts {
+  .accounts--social {
+    margin-top: 20px;
+    .md-fab {
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+  .accounts--form {
+    margin-top: 35px;
+  }
+  .accounts--redirect {
+    margin-top: 15px;
+    &__link {
+      font-size: 0.8em;
+      padding: 0 5px;
+    }
+  }
+}

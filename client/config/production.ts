@@ -9,5 +9,9 @@ function productionOptimizations($compileProvider:angular.ICompileProvider, $htt
   }
 }
 
+/**
+ * Production Mode Speed Optimizations
+ * @type {angular.module}
+ */
 angular.module("app")
   .config(productionOptimizations);

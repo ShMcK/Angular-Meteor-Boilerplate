@@ -1,5 +1,9 @@
 ///<reference path="../../typings/typings.d.ts" />
 'use strict';
+/**
+ * Ui.Router Configuration
+ * @type {angular.module}
+ */
 angular.module('app')
     .config(function ($urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);

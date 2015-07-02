@@ -8,7 +8,7 @@ Meteor.startup(function () {
     // If no Items
     if (Items.find().count() === 0) {
         console.log('Adding items...');
-        // Add Items
+        // Add dummy data
         var items = [{
                 title: "Item 1",
                 body: "The first item.",
@@ -25,6 +25,7 @@ Meteor.startup(function () {
                 author: 'admin',
                 createdAt: new Date()
             }];
+        // end dummy data
         items.forEach(function (item) {
             Items.insert(item);
         });

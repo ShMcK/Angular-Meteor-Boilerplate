@@ -1,5 +1,9 @@
 ///<reference path="../../typings/typings.d.ts" />
 
+/**
+ * Angular Material Icon Setup
+ * @type {angular.module}
+ */
 angular.module("app")
   .config(themeIcons);
 

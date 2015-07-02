@@ -1,29 +1,40 @@
-<md-content layout="row">
+<md-content layout="row" class="accounts">
   <span flex></span>
-  <md-whiteframe layout="column" flex="50">
-    <div layout="row" layout-align="space-around center">
-      <div>Login with:</div>
-      <md-button>Twitter</md-button>
-      <md-button>Facebook</md-button>
+  <md-whiteframe layout="column" flex="60">
+
+    <div layout="row" layout-align="space-around center" class="accounts--social">
+      <md-button class="md-fab md-mini" aria-label="Login: Twitter">
+        <md-icon md-svg-src="icons/ionicons/social-twitter.svg"></md-icon>
+      </md-button>
+      <md-button class="md-fab md-mini" aria-label="Login: Facebook">
+        <md-icon md-svg-icon="icons/ionicons/social-facebook.svg"></md-icon>
+      </md-button>
     </div>
-    <div ng-show="lc.error" class="md-warn"><small>{{ lc.error }}</small></div>
-    <form layout="column">
-      <md-input-container>
-        <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
+
+    <form layout="column" class="accounts--form">
+      <md-input-container md-no-float>
+        <md-icon md-svg-icon="communication:email"></md-icon>
         <input type="text" ng-model="lc.credentials.email"
-               placeholder="email" aria-label="email" />
+               placeholder="Email" aria-label="email"/>
       </md-input-container>
-      <md-input-container>
-        <md-icon md-svg-icon="action:ic_lock_open_24px"></md-icon>
+
+      <md-input-container md-no-float>
+        <md-icon md-svg-icon="action:lock_open"></md-icon>
         <input type="password" ng-model="lc.credentials.password"
-               placeholder="password" aria-label="password" />
+               placeholder="Password" aria-label="password"/>
       </md-input-container>
       <md-button class="md-raised md-primary" ng-click="lc.login()"
-                 aria-label="login">Sign In</md-button>
+                 aria-label="login">Sign In
+      </md-button>
     </form>
-    <div layout="row" layout-align="space-around center">
-      <a ui-sref="resetpw">Forgot password?</a>
-      <a ui-sref="register">Create an account</a>
+
+    <div layout="row" layout-align="space-around center" class="accounts--redirect">
+      <md-button class="md-primary md-hue-1 accounts--redirect__link">
+        <a ui-sref="resetpw">Forgot password?</a>
+      </md-button>
+      <md-button class="md-primary md-hue-1 accounts--redirect__link">
+        <a ui-sref="register">Create an account</a>
+      </md-button>
     </div>
   </md-whiteframe>
   <span flex></span>

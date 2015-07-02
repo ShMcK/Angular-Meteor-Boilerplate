@@ -20,6 +20,10 @@ function languageLoader($http, $q) {
         return deferred.promise;
     };
 }
+/**
+ * Angular Translate Setup
+ * @type {angular.module}
+ */
 angular.module('app')
     .config(translate)
     .factory('languageLoader', languageLoader);

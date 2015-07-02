@@ -6,6 +6,10 @@ function productionOptimizations($compileProvider, $httpProvider) {
         $httpProvider.useApplyAsync(true);
     }
 }
+/**
+ * Production Mode Speed Optimizations
+ * @type {angular.module}
+ */
 angular.module("app")
     .config(productionOptimizations);
 //# sourceMappingURL=production.js.map
