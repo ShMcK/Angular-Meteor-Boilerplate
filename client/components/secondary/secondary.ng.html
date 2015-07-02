@@ -1,3 +1,10 @@
 <md-content layout-padding style="height: 600px;padding: 24px;">
   <p>Hello, {{secondary.componentName}}!</p>
+
+  <p>Published from DB:</p>
+  <ul>
+    <li ng-repeat="item in secondary.items">
+      {{item.title}}
+    </li>
+  </ul>
 </md-content>

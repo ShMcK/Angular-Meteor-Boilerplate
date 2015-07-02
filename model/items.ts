@@ -63,7 +63,6 @@ Schemas.Item = new SimpleSchema({
 
 //Schema.Item.internationalize();
 
-
 Items.attachSchema(Schemas.Item);
 
 /**

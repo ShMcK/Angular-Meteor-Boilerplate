@@ -2,8 +2,11 @@
 
 interface IItem {
   id?: string;
-  createdAt?: Date;
   title: string;
+  author?: string;
+  owner?: string;
+  userId?: string;
+  createdAt?: Date;
   body?: string;
   viewCount?: number;
   clickCount?: number;
@@ -11,7 +14,6 @@ interface IItem {
   upVoters?: [string];
   downVotes?: number;
   downVoters?: [string];
-  author: string;
-  owner: string;
-  userId: string;
 }
+
+// todo: remove option from owner, userId, author, createdAt later

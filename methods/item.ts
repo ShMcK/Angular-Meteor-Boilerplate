@@ -19,7 +19,7 @@ Meteor.methods({
 
     // safe!
     // set fields
-    item.owner = Meteor.userId();
+    //item.owner = Meteor.userId(); // after login set
     item.createdAt = new Date();
     // todo: add other fields
 
