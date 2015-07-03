@@ -8,7 +8,6 @@ class SecondaryCtrl {
   constructor($meteor: angular.meteor.IMeteorService) {
     this.componentName = 'secondary';
     this.items = $meteor.collection(Items).subscribe('items');
-
   }
 }
 SecondaryCtrl.$inject = ['$meteor'];

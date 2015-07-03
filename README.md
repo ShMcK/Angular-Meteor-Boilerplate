@@ -1,13 +1,18 @@
 # Angular-Meteor-Boilerplate (WIP)
 
-A modular full-featured full-stack boilerplate for Angular-Meteor.
+Currently a work in progress. Incomplete.
 
-Includes:
-* TypeScript
-* Angular-Material
+A modular full-featured full-stack boilerplate for Angular-Meteor. Written in TypeScript.
+
+Front-End:
+* Angular-Material + Icon Sets
 * ngAnimate, ngSanitize, ngTouch, ngAria, ngMessages
-* Ui-Router
-* Sass
-* Material Icon Sets
+* Ui-Router Setup
 * Angular-Translate (i18n)
+* Sass
+
+User Accounts:
 * Material Ui-Accounts Setup
+* OAuth: Facebook, Twitter, Google, Github (options)
+* Email verification through Kickbox.io (option)
+* Welcome Email (option)

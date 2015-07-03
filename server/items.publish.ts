@@ -6,6 +6,6 @@ declare var Items:Mongo.Collection<IItem>;
  * Publish
  * @type {meteor.publish}
  */
-Meteor.publish('items', function(options) {
+Meteor.publish('items', function (options) {
   return Items.find({}, options);
 });

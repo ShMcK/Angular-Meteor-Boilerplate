@@ -1,22 +1,22 @@
 ///<reference path="../typings/typings.d.ts" />
 'use strict';
 
-var settings:IApi = JSON.parse(Assets.getText("settings.json"));
+var config:IConfig = JSON.parse(Assets.getText("config.json"));
 
 
-Meteor.startup(function () {
+Meteor.startup(function ():void {
   /**
    * Account Methods
    * @type {meteor.methods}
    */
   Meteor.methods({
-    validateEmailAddress: function (address:string) {
+    validateEmailAddress: function (address:string):boolean {
       check(address, String);
       return new Promise(function (resolve, reject) {
         HTTP.call("GET", "https://api.kickbox.io/v1/verify", {
           params: {
             email: address,
-            apikey: settings.kickboxKey
+            apikey: config.kickboxKey
           }
         }, function (error, response) {
           if (error) {

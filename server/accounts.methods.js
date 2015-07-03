@@ -1,6 +1,6 @@
 ///<reference path="../typings/typings.d.ts" />
 'use strict';
-var settings = JSON.parse(Assets.getText("settings.json"));
+var config = JSON.parse(Assets.getText("config.json"));
 Meteor.startup(function () {
     /**
      * Account Methods
@@ -13,7 +13,7 @@ Meteor.startup(function () {
                 HTTP.call("GET", "https://api.kickbox.io/v1/verify", {
                     params: {
                         email: address,
-                        apikey: settings.kickboxKey
+                        apikey: config.kickboxKey
                     }
                 }, function (error, response) {
                     if (error) {

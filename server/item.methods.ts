@@ -2,13 +2,13 @@
 'use strict';
 declare var Items:Mongo.Collection<IItem>;
 
-Meteor.startup(function () {
+Meteor.startup(function ():void {
   /**
    * Items Methods
    * @type {meteor.methods}
    */
   Meteor.methods({
-    'addItem': function (item:IItem) {
+    'addItem': function (item:IItem):void {
       // Not logged in
       if (!Meteor.userId()) {
         throw 'Please login first'

@@ -7,16 +7,17 @@ class PageCtrl {
   constructor(public $mdUtil,
               public $mdSidenav:angular.material.MDSidenavService,
               public $log:angular.ILogService) {
+
     this.toggleLeft = buildToggler('left');
 
     function buildToggler(navID) {
       return $mdUtil.debounce(function () {
         $mdSidenav(navID)
-          .toggle()
-          .then(function () {
+          .toggle();
+          //.then(function () {
             //$log.debug("toggle " + navID + " is done");
-          });
-      }, 300);
+          //});
+      }, 250);
     }
   }
 }

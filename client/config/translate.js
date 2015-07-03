@@ -6,18 +6,19 @@ function translate($translateProvider) {
     // for security purposes
     $translateProvider.useSanitizeValueStrategy('sanitize');
 }
-function languageLoader($http, $q) {
+function languageLoader($http) {
     return function (options) {
-        var deferred = $q.defer();
-        $http({
-            method: 'GET',
-            url: 'i18n/locale-' + options.key + '.json'
-        }).success(function (data) {
-            deferred.resolve(data);
-        }).error(function () {
-            deferred.reject(options.key);
+        return new Promise(function (resolve, reject) {
+            $http({
+                method: 'GET',
+                url: 'i18n/locale-' + options.key + '.json'
+            }).success(function (data) {
+                resolve(data);
+            }).error(function (e) {
+                console.log("Language Loader Error: " + e);
+                reject(options.key);
+            });
         });
-        return deferred.promise;
     };
 }
 /**

@@ -2,7 +2,7 @@
 
 var MODE = 'development'; // change later
 
-function productionOptimizations($compileProvider:angular.ICompileProvider, $httpProvider:angular.IHttpProvider) {
+function productionOptimizations($compileProvider:angular.ICompileProvider, $httpProvider:angular.IHttpProvider):void {
   if (MODE === 'production') {
     $compileProvider.debugInfoEnabled(false);
     $httpProvider.useApplyAsync(true);

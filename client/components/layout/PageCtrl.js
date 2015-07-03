@@ -9,11 +9,11 @@ var PageCtrl = (function () {
         function buildToggler(navID) {
             return $mdUtil.debounce(function () {
                 $mdSidenav(navID)
-                    .toggle()
-                    .then(function () {
-                    //$log.debug("toggle " + navID + " is done");
-                });
-            }, 300);
+                    .toggle();
+                //.then(function () {
+                //$log.debug("toggle " + navID + " is done");
+                //});
+            }, 250);
         }
     }
     return PageCtrl;

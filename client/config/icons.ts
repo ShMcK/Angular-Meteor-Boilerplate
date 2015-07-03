@@ -7,7 +7,7 @@
 angular.module("app")
   .config(themeIcons);
 
-function themeIcons($mdIconProvider:angular.material.MDIconProvider) {
+function themeIcons($mdIconProvider:angular.material.MDIconProvider):void {
   var iconSets = [
     'action', 'communication', 'content',
     'toggle', 'navigation', 'image',
@@ -15,7 +15,7 @@ function themeIcons($mdIconProvider:angular.material.MDIconProvider) {
     'hardware', 'av', 'maps',
     'alert', 'social'];
 
-  angular.forEach(iconSets, function (iconSet:string) {
+  angular.forEach(iconSets, function (iconSet:string):void {
     $mdIconProvider.iconSet(iconSet, `/icons/${iconSet}-icons.svg`, 24);
   });
 
