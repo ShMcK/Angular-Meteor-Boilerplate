@@ -2,9 +2,9 @@
   <md-toolbar class="md-theme-indigo">
     <h1 class="md-toolbar-tools" translate>SIDENAV.HEADER</h1>
   </md-toolbar>
-  <md-list ng-controller="MenuCtrl as menu" class="sidebar--list">
+  <md-list class="sidebar--list">
     <!--<md-subheader class="md-no-sticky">{{ 'SIDENAV.SUBHEADER' }}</md-subheader>-->
-    <a ui-sref="{{item.link}}" ng-repeat="item in menu.items" >
+    <a ui-sref="{{item.link}}" ng-repeat="item in sideNav.MenuItems.items" >
       <md-list-item class="sidebar--menu-item">
         <!--<md-icon md-svg-icon="{{item.icon}}"></md-icon>-->
         <p translate>{{item.name}}</p>

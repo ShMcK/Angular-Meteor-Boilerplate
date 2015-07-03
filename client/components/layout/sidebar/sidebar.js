@@ -1,19 +1,12 @@
 ///<reference path="../../../../typings/typings.d.ts" />
 var SidebarCtrl = (function () {
-    function SidebarCtrl($mdSidenav, $log) {
-        this.$mdSidenav = $mdSidenav;
-        this.$log = $log;
+    function SidebarCtrl(Toggler, MenuItems) {
+        this.Toggler = Toggler;
+        this.MenuItems = MenuItems;
     }
-    SidebarCtrl.prototype.close = function () {
-        var _this = this;
-        this.$mdSidenav('left').close()
-            .then(function () {
-            _this.$log.debug('close LEFT is done');
-        });
-    };
     return SidebarCtrl;
 })();
-SidebarCtrl.$inject = ['$mdSidenav', '$log'];
+SidebarCtrl.$inject = ['Toggler', 'MenuItems'];
 function sidebar() {
     return {
         templateUrl: 'client/components/layout/sidebar/sidebar.ng.html',

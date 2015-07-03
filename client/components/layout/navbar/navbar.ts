@@ -1,7 +1,10 @@
 ///<reference path="../../../../typings/typings.d.ts" />
 'use strict';
 
-class NavbarCtrl {}
+class NavbarCtrl {
+  constructor(public Toggler){}
+}
+NavbarCtrl.$inject = ['Toggler'];
 
 function shmckNavbar():angular.IDirective {
   return {

@@ -8,7 +8,7 @@ interface IMenuItem {
   image?: string;
 }
 
-class MenuCtrl {
+class MenuItems {
   items:IMenuItem[];
 
   constructor() {
@@ -27,4 +27,4 @@ class MenuCtrl {
  * @type {angular.module}
  */
 angular.module('shmck.layout')
-  .controller('MenuCtrl', MenuCtrl);
+  .service('MenuItems', MenuItems);

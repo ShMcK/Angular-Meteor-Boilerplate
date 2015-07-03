@@ -1,7 +1,7 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
-var MenuCtrl = (function () {
-    function MenuCtrl() {
+var MenuItems = (function () {
+    function MenuItems() {
         this.items = [{
                 name: 'MAIN.TITLE',
                 link: 'main'
@@ -10,12 +10,12 @@ var MenuCtrl = (function () {
                 link: 'secondary'
             }];
     }
-    return MenuCtrl;
+    return MenuItems;
 })();
 /**
  * Menu Items
  * @type {angular.module}
  */
 angular.module('shmck.layout')
-    .controller('MenuCtrl', MenuCtrl);
-//# sourceMappingURL=MenuCtrl.js.map
+    .service('MenuItems', MenuItems);
+//# sourceMappingURL=menu.service.js.map

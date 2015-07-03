@@ -1,16 +1,10 @@
 ///<reference path="../../../../typings/typings.d.ts" />
 
 class SidebarCtrl {
-  constructor(public $mdSidenav:angular.material.MDSidenavService, public $log:angular.ILogService) {
-  }
-  close() {
-    this.$mdSidenav('left').close()
-    .then(() => {
-      this.$log.debug('close LEFT is done');
-    });
-  }
+  constructor(public Toggler, public MenuItems) {}
+  // todo: Toggler.close() button
 }
-SidebarCtrl.$inject = ['$mdSidenav', '$log'];
+SidebarCtrl.$inject = ['Toggler', 'MenuItems'];
 
 function sidebar():angular.IDirective {
   return {

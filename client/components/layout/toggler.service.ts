@@ -1,15 +1,18 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
 
-class PageCtrl {
+class Toggler {
   toggleLeft:any;
-
   constructor(public $mdUtil,
               public $mdSidenav:angular.material.MDSidenavService,
               public $log:angular.ILogService) {
 
     this.toggleLeft = buildToggler('left');
 
+    /**
+     * build side-menu popout toggler
+     * @returns {function(): undefined|LoDashObjectWrapper<Function>}
+     */
     function buildToggler(navID:string) {
       return $mdUtil.debounce(function () {
         $mdSidenav(navID)
@@ -17,8 +20,14 @@ class PageCtrl {
       }, 250); // side-menu delay
     }
   }
+  close() {
+    this.$mdSidenav('left').close();
+      //.then(() => {
+      //  this.$log.debug('close LEFT is done');
+      //});
+  }
 }
-PageCtrl.$inject = ['$mdUtil', '$mdSidenav', '$log'];
+Toggler.$inject = ['$mdUtil', '$mdSidenav', '$log'];
 
 /**
  * Page
@@ -26,4 +35,4 @@ PageCtrl.$inject = ['$mdUtil', '$mdSidenav', '$log'];
  * @type {angular.module}
  */
 angular.module('shmck.layout')
-  .controller('PageCtrl', PageCtrl);
+  .service('Toggler', Toggler);
