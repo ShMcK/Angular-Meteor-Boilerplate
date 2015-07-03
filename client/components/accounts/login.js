@@ -19,13 +19,38 @@ var LoginCtrl = (function () {
             _this.error = "Login error: " + e;
         });
     };
+    LoginCtrl.prototype.loginWithFacebook = function () {
+        this.$meteor.loginWithFacebook({
+            requestPermissions: ['email']
+        }, function (e) {
+            if (e) {
+                console.log(e.reason);
+            }
+        });
+    };
+    LoginCtrl.prototype.loginWithGoogle = function () {
+        this.$meteor.loginWithGoogle({
+            requestPermissions: ['email']
+        }, function (e) {
+            if (e) {
+                console.log(e.reason);
+            }
+        });
+    };
+    LoginCtrl.prototype.loginWithTwitter = function () {
+        this.$meteor.loginWithTwitter(function (e) {
+            if (e) {
+                console.log(e.reason);
+            }
+        });
+    };
     return LoginCtrl;
 })();
 LoginCtrl.$inject = ['$meteor', '$state'];
 function login() {
     return {
         templateUrl: 'client/components/accounts/login.ng.html',
-        controllerAs: 'lc',
+        controllerAs: 'accounts',
         controller: LoginCtrl
     };
 }

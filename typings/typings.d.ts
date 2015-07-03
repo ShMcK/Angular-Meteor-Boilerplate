@@ -7,7 +7,7 @@
 //<reference path="angular-material/angular-material.d.ts" />
 ///<reference path="angular-ui-router/angular-ui-router.d.ts" />
 ///<reference path="angular-translate/angular-translate.d.ts" />
-
+///<reference path="es6-promise/es6-promise.d.ts" />
 
 /* Custom */
 ///<reference path="custom/accounts.d.ts" />

@@ -3,10 +3,16 @@
   <md-whiteframe layout="column" flex="60">
 
     <div layout="row" layout-align="space-around center" class="accounts--social">
-      <md-button class="md-fab md-mini" aria-label="Login: Twitter">
+      <md-button class="md-fab md-mini" aria-label="Login: Twitter"
+          ng-click="accounts.loginWithTwitter()">
         <md-icon md-svg-src="icons/ionicons/social-twitter.svg"></md-icon>
       </md-button>
-      <md-button class="md-fab md-mini" aria-label="Login: Facebook">
+      <md-button class="md-fab md-mini" aria-label="Login: Google+"
+                 ng-click="accounts.loginWithGoogle()">
+        <md-icon md-svg-src="icons/ionicons/social-google.svg"></md-icon>
+      </md-button>
+      <md-button class="md-fab md-mini" aria-label="Login: Facebook"
+          ng-click="accounts.loginWithFacebook()">
         <md-icon md-svg-icon="icons/ionicons/social-facebook.svg"></md-icon>
       </md-button>
     </div>
@@ -14,16 +20,16 @@
     <form layout="column" class="accounts--form">
       <md-input-container md-no-float>
         <md-icon md-svg-icon="communication:email"></md-icon>
-        <input type="text" ng-model="lc.credentials.email"
+        <input type="text" ng-model="accounts.credentials.email"
                placeholder="Email" aria-label="email"/>
       </md-input-container>
 
       <md-input-container md-no-float>
         <md-icon md-svg-icon="action:lock_open"></md-icon>
-        <input type="password" ng-model="lc.credentials.password"
+        <input type="password" ng-model="accounts.credentials.password"
                placeholder="Password" aria-label="password"/>
       </md-input-container>
-      <md-button class="md-raised md-primary" ng-click="lc.login()"
+      <md-button class="md-raised md-primary" ng-click="accounts.login()"
                  aria-label="login">Sign In
       </md-button>
     </form>

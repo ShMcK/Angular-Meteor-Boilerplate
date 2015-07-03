@@ -20,11 +20,19 @@ accounts-google
 accounts-base
 #accounts-ui
 accounts-ui-unstyled
+service-configuration
+http
+email
+meteorhacks:ssr
 
 # Angular
 urigo:angular
 urigo:angular-ui-router
 angularjs:angular-sanitize
+angular:angular-animate
+angular:angular-touch
+angular:angular-aria
+angular:angular-messages
 
 # Material Design
 angular:angular-material
@@ -42,7 +50,4 @@ aldeed:collection2
 
 #Remove this & pub/sub
 insecure
-angular:angular-animate
-angular:angular-touch
-angular:angular-aria
-angular:angular-messages
+
