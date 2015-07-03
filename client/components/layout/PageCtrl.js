@@ -10,10 +10,7 @@ var PageCtrl = (function () {
             return $mdUtil.debounce(function () {
                 $mdSidenav(navID)
                     .toggle();
-                //.then(function () {
-                //$log.debug("toggle " + navID + " is done");
-                //});
-            }, 250);
+            }, 250); // side-menu delay
         }
     }
     return PageCtrl;

@@ -2,56 +2,9 @@
 'use strict';
 
 class LoginCtrl {
-  credentials:ICredentials;
-  error:string;
-
-  constructor(public $meteor:angular.meteor.IMeteorService,
-              public $state:angular.ui.IStateService) {
-    this.credentials = {
-      email: '',
-      password: ''
-    };
-    this.error = '';
-  }
-
-  login() {
-    this.$meteor.loginWithPassword(this.credentials.email, this.credentials.password)
-      .then(() => {
-        this.$state.go('main');
-      }, (e) => {
-        this.error = `Login error: ${e}`;
-      })
-  }
-
-  loginWithFacebook() {
-    this.$meteor.loginWithFacebook({
-      requestPermissions: ['email']
-    }, function (e) {
-      if (e) {
-        console.log(e.reason)
-      }
-    });
-  }
-
-  loginWithGoogle() {
-    this.$meteor.loginWithGoogle({
-      requestPermissions: ['email']
-    }, function (e) {
-      if (e) {
-        console.log(e.reason)
-      }
-    });
-  }
-
-  loginWithTwitter() {
-    this.$meteor.loginWithTwitter((e) => {
-      if (e) {
-        console.log(e.reason)
-      }
-    });
-  }
+  constructor(public Accounts:any) {}
 }
-LoginCtrl.$inject = ['$meteor', '$state'];
+LoginCtrl.$inject = ['Accounts'];
 
 function login():angular.IDirective {
   return {

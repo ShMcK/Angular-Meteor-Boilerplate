@@ -10,14 +10,11 @@ class PageCtrl {
 
     this.toggleLeft = buildToggler('left');
 
-    function buildToggler(navID) {
+    function buildToggler(navID:string) {
       return $mdUtil.debounce(function () {
         $mdSidenav(navID)
           .toggle();
-          //.then(function () {
-            //$log.debug("toggle " + navID + " is done");
-          //});
-      }, 250);
+      }, 250); // side-menu delay
     }
   }
 }

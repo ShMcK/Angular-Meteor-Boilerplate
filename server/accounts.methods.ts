@@ -1,9 +1,6 @@
 ///<reference path="../typings/typings.d.ts" />
 'use strict';
 
-var config:IConfig = JSON.parse(Assets.getText("config.json"));
-
-
 Meteor.startup(function ():void {
   /**
    * Account Methods

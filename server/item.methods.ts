@@ -19,7 +19,7 @@ Meteor.startup(function ():void {
 
       // safe!
       // set fields
-      //item.owner = Meteor.userId(); // after login set
+      item.owner = Meteor.userId();
       item.createdAt = new Date();
       // todo: add other fields
 

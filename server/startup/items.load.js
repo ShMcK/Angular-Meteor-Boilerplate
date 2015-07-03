@@ -7,7 +7,7 @@
 Meteor.startup(function () {
     // If no Items
     if (Items.find().count() === 0) {
-        console.log('Adding items...');
+        console.log('Adding default items...');
         // Add dummy data
         var items = [{
                 title: "Item 1",

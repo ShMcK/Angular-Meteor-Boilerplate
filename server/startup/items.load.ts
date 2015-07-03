@@ -11,7 +11,7 @@ Meteor.startup(function () {
 
   // If no Items
   if (Items.find().count() === 0) {
-    console.log('Adding items...');
+    console.log('Adding default items...');
 
     // Add dummy data
     let items:IItem[] = [{
@@ -31,7 +31,7 @@ Meteor.startup(function () {
       createdAt: new Date()
     }];
     // end dummy data
-    items.forEach(function (item:IItem) {
+    items.forEach((item:IItem) => {
       Items.insert(item);
     });
   } else {

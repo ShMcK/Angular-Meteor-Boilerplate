@@ -2,38 +2,48 @@
   <span flex></span>
   <md-whiteframe layout="column" flex="60">
 
+    <!-- accounts social -->
     <div layout="row" layout-align="space-around center" class="accounts--social">
       <md-button class="md-fab md-mini" aria-label="Login: Twitter"
-          ng-click="accounts.loginWithTwitter()">
+          ng-click="accounts.Accounts.loginWithTwitter()">
         <md-icon md-svg-src="icons/ionicons/social-twitter.svg"></md-icon>
       </md-button>
       <md-button class="md-fab md-mini" aria-label="Login: Google+"
-                 ng-click="accounts.loginWithGoogle()">
+                 ng-click="accounts.Accounts.loginWithGoogle()">
         <md-icon md-svg-src="icons/ionicons/social-google.svg"></md-icon>
       </md-button>
       <md-button class="md-fab md-mini" aria-label="Login: Facebook"
-          ng-click="accounts.loginWithFacebook()">
+          ng-click="accounts.Accounts.loginWithFacebook()">
         <md-icon md-svg-icon="icons/ionicons/social-facebook.svg"></md-icon>
       </md-button>
     </div>
 
+    <!-- accounts error -->
+    <div ng-if="accounts.error" class="accounts--error">
+      <p>{{accounts.Accounts.error}}</p>
+    </div>
+
+    <!-- accounts form -->
     <form layout="column" class="accounts--form">
       <md-input-container md-no-float>
         <md-icon md-svg-icon="communication:email"></md-icon>
-        <input type="text" ng-model="accounts.credentials.email"
+        <input type="text" ng-model="accounts.Accounts.credentials.email"
                placeholder="Email" aria-label="email"/>
       </md-input-container>
 
       <md-input-container md-no-float>
         <md-icon md-svg-icon="action:lock_open"></md-icon>
-        <input type="password" ng-model="accounts.credentials.password"
+        <input type="password" ng-model="accounts.Accounts.credentials.password"
                placeholder="Password" aria-label="password"/>
       </md-input-container>
-      <md-button class="md-raised md-primary" ng-click="accounts.login()"
+
+      <!-- accounts submit -->
+      <md-button class="md-raised md-primary" ng-click="accounts.Accounts.login()"
                  aria-label="login">Sign In
       </md-button>
     </form>
 
+    <!-- accounts redirect -->
     <div layout="row" layout-align="space-around center" class="accounts--redirect">
       <md-button class="md-primary md-hue-1 accounts--redirect__link">
         <a ui-sref="resetpw">Forgot password?</a>

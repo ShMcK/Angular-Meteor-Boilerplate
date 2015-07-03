@@ -12,7 +12,7 @@ angular.module('app')
   }).run(['$rootScope', '$state', function ($rootScope:angular.IRootScopeService, $state:angular.ui.IStateService):void {
     $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
       if (error === 'AUTH_REQUIRED') {
-        $state.go('/');
+        $state.go('main');
       }
     });
   }]);

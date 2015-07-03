@@ -2,68 +2,67 @@
 'use strict';
 /**
  *  OAuth Service Configs
+ *  @type {meteor.startup}
  */
-var createServiceConfiguration = function (service, clientId, secret, activated) {
-    // reset config on startup
-    ServiceConfiguration.configurations.remove({
-        service: service
-    });
-    var config = {
-        generic: {
-            service: service,
-            clientId: clientId,
-            secret: secret
-        },
-        facebook: {
-            service: service,
-            appId: clientId,
-            secret: secret,
-            activated: activated
-        },
-        google: {
-            service: service,
-            appId: clientId,
-            secret: secret,
-            activated: activated
-        },
-        github: {
-            service: service,
-            appId: clientId,
-            secret: secret,
-            activated: activated
-        },
-        twitter: {
-            service: service,
-            consumerKey: clientId,
-            secret: secret,
-            activated: activated
-        },
-        kickbox: {
-            service: service,
-            consumerKey: clientId,
-            activated: activated
+Meteor.startup(function () {
+    process.env.MAIL_URL = "Insert your own MAIL_URL from your email provider here.";
+    var createServiceConfiguration = function (service, clientId, secret) {
+        // reset config on startup
+        ServiceConfiguration.configurations.remove({
+            service: service
+        });
+        var config = {
+            generic: {
+                service: service,
+                clientId: clientId,
+                secret: secret
+            },
+            facebook: {
+                service: service,
+                appId: clientId,
+                secret: secret
+            },
+            google: {
+                service: service,
+                appId: clientId,
+                secret: secret
+            },
+            github: {
+                service: service,
+                appId: clientId,
+                secret: secret
+            },
+            twitter: {
+                service: service,
+                consumerKey: clientId,
+                secret: secret
+            },
+            kickbox: {
+                service: service,
+                consumerKey: clientId
+            }
+        };
+        serviceConfig(service);
+        function serviceConfig(service) {
+            var services = ['facebook', 'google', 'twitter', 'github', 'kickbox'];
+            if (_.contains(services, service)) {
+                return ServiceConfiguration.configurations.insert(config[service]);
+            }
+            else {
+                return ServiceConfiguration.configurations.insert(config.generic);
+            }
         }
     };
-    serviceConfig(service);
-    function serviceConfig(service) {
-        var services = ['facebook', 'google', 'twitter', 'github', 'kickbox'];
-        if (_.contains(services, service)) {
-            return ServiceConfiguration.configurations.insert(config[service]);
-        }
-        else {
-            return ServiceConfiguration.configurations.insert(config.generic);
-        }
-    }
-};
-/**
- * Configs: Add Key, Secret & set to true to activate
- * {service, key, secret, activated}
- */
-createServiceConfiguration('facebook', 'Insert your appId here.', 'Insert your secret here.', false);
-createServiceConfiguration('github', 'Insert your clientId here.', 'Insert your secret here.', false);
-createServiceConfiguration('google', 'Insert your clientId here.', 'Insert your secret here.', false);
-createServiceConfiguration('twitter', 'Insert your consumerKey here.', 'Insert your secret here.', false);
-if (Settings.verifyEmail) {
-    createServiceConfiguration('kickbox', 'Insert API key', null, false);
-}
+    /**
+     * Configs: Add Key, Secret & set to true to activate
+     * {service, key, secret, activated}
+     */
+    createServiceConfiguration('facebook', 'Insert your appId here.', 'Insert your secret here.');
+    createServiceConfiguration('github', 'Insert your clientId here.', 'Insert your secret here.');
+    createServiceConfiguration('google', 'Insert your clientId here.', 'Insert your secret here.');
+    createServiceConfiguration('twitter', 'Insert your consumerKey here.', 'Insert your secret here.');
+    //if (Settings.verifyEmail) {
+    //  createServiceConfiguration('kickbox', 'Insert API key', null);
+    //}
+});
 //# sourceMappingURL=service.config.js.map

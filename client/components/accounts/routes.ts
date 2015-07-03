@@ -23,13 +23,9 @@ angular.module('shmck.accounts')
       .state('logout', {
         url: '/logout',
         resolve: {
-          'logout': ['$meteor', '$state',
-            function ($meteor:angular.meteor.IMeteorService, $state:angular.ui.IStateService) {
-              return $meteor.logout().then(function () {
-                $state.go('main');
-              }, function (e) {
-                console.log(`logout error - ${e}`);
-              });
+          'logout': ['Accounts',
+            function (Accounts) {
+              return Accounts.logout();
             }]
         }
       });
