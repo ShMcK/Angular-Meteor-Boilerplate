@@ -1,9 +1,8 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
 var ProfileCtrl = (function () {
-    function ProfileCtrl(Accounts) {
+    function ProfileCtrl(Accounts, $meteor) {
         this.Accounts = Accounts;
-        //this.users = $meteor.collection(Meteor.users, false).subscribe('users');
     }
     return ProfileCtrl;
 })();

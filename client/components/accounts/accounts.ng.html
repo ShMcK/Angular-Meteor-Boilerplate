@@ -39,7 +39,7 @@
                placeholder="Email" aria-label="email"/>
       </md-input-container>
 
-      <md-input-container md-no-float>
+      <md-input-container md-no-float ng-if="!(accounts.page === 'passwordReset')">
         <md-icon md-svg-icon="action:lock_open"></md-icon>
         <input type="password" ng-model="accounts.Accounts.credentials.password"
                placeholder="Password" aria-label="password"/>

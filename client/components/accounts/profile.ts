@@ -2,8 +2,9 @@
 'use strict';
 
 class ProfileCtrl {
-  constructor(public Accounts:any) {
-    //this.users = $meteor.collection(Meteor.users, false).subscribe('users');
+  user:Meteor.User;
+  constructor(public Accounts:any,
+              $meteor:angular.meteor.IMeteorService) {
   }
 }
 ProfileCtrl.$inject = ['Accounts'];

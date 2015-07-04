@@ -2,8 +2,10 @@
 'use strict';
 var ItemObjectCtrl = (function () {
     function ItemObjectCtrl($meteor, $stateParams, $scope) {
-        this.item = $meteor.object(Items, $stateParams.itemId);
+        // subscribe to users (get avatar, user email, etc.)
+        this.users = $meteor.collection(Meteor.users, false).subscribe('users');
         // subscribe to items
+        this.item = $meteor.object(Items, $stateParams.itemId);
         var subscriptionHandle;
         $meteor.subscribe('items').then(function (handle) {
             subscriptionHandle = handle;
