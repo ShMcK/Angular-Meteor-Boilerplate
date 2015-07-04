@@ -3,6 +3,7 @@
 var ProfileCtrl = (function () {
     function ProfileCtrl(Accounts) {
         this.Accounts = Accounts;
+        //this.users = $meteor.collection(Meteor.users, false).subscribe('users');
     }
     return ProfileCtrl;
 })();

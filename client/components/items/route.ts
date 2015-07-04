@@ -10,14 +10,6 @@ angular.module('shmck.items')
     $stateProvider
       .state('item', {
         url: '/items/:itemId',
-        // refactor into component when new-angular-router is available
-        templateUrl: 'client/components/items/item-object.ng.html',
-        controller: 'ItemObjectCtrl',
-        controllerAs: 'item',
-        resolve: {
-          'item': ['$stateParams', '$meteor', function ($stateParams, $meteor) {
-            return $meteor.object(Items, $stateParams.itemId, false);
-          }]
-        }
+        template: '<item-object></item-object>'
       });
   });

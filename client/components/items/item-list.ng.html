@@ -1,20 +1,21 @@
-<h1>Parties:</h1>
-<div>
-  <input type="search" ng-model="itemList.search" placeholder="Search">
-  <select ng-model="orderProperty">
-    <option value="1">Ascending</option>
-    <option value="-1">Descending</option>
-  </select>
-</div>
-
-<md-list>
+<!-- item list -->
+<md-list class="item-list">
   <md-subheader class="md-no-sticky">Items Published from DB</md-subheader>
+
+  <div class="item-list--options">
+    <input type="search" ng-model="itemList.search" placeholder="Search">
+    <select ng-model="updateOrder">
+      <option value="1">Ascending</option>
+      <option value="-1">Descending</option>
+    </select>
+  </div>
+
+
   <md-list-item dir-paginate="item in itemList.items | itemsPerPage:list.perPage"
-                total-items="itemList.itemCount.count"
-                ui-sref="item({itemId: item._id})">
+                total-items="itemList.itemCount.count">
     <!--<img alt="{{ item.title }}" ng-src="{{ item.img }}" class="md-avatar"/>-->
 
-    <p>{{ item.title }}</p>
+    <a ui-sref="item({itemId: item._id})">{{ item.title }}</a>
     <!--<md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat"-->
     <!--class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>-->
   </md-list-item>

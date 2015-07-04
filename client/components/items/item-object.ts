@@ -1,0 +1,39 @@
+///<reference path="../../../typings/typings.d.ts" />
+'use strict';
+
+class ItemObjectCtrl {
+  item: angular.meteor.AngularMeteorObject<IItem>;
+  constructor($meteor:angular.meteor.IMeteorService,
+              $stateParams:angular.ui.IStateParamsService,
+              $scope:angular.IScope) {
+
+    this.item = $meteor.object(Items, $stateParams.itemId);
+
+    // subscribe to items
+    var subscriptionHandle;
+    $meteor.subscribe('items').then(function (handle) {
+      subscriptionHandle = handle;
+    });
+
+    // unsubscribe on destroy
+    $scope.$on('$destroy', function () {
+      subscriptionHandle.stop();
+    });
+  }
+}
+ItemObjectCtrl.$inject = ['$meteor', '$stateParams', '$scope'];
+
+function itemObject():angular.IDirective {
+  return {
+    templateUrl: 'client/components/items/item-object.ng.html',
+    controller: ItemObjectCtrl,
+    controllerAs: 'itemObject'
+  }
+}
+
+
+/**
+ * Item Object from $stateParams.itemId
+ * @type {anuglar.module}
+ */
+angular.module('shmck.items').directive('itemObject', itemObject);
