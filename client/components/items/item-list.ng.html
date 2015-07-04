@@ -1,6 +1,17 @@
+<h1>Parties:</h1>
+<div>
+  <input type="search" ng-model="itemList.search" placeholder="Search">
+  <select ng-model="orderProperty">
+    <option value="1">Ascending</option>
+    <option value="-1">Descending</option>
+  </select>
+</div>
+
 <md-list>
   <md-subheader class="md-no-sticky">Items Published from DB</md-subheader>
-  <md-list-item ng-repeat="item in itemList.items" ui-sref="item({itemId: item._id})">
+  <md-list-item dir-paginate="item in itemList.items | itemsPerPage:list.perPage"
+                total-items="itemList.itemCount.count"
+                ui-sref="item({itemId: item._id})">
     <!--<img alt="{{ item.title }}" ng-src="{{ item.img }}" class="md-avatar"/>-->
 
     <p>{{ item.title }}</p>
@@ -8,3 +19,6 @@
     <!--class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>-->
   </md-list-item>
 </md-list>
+
+<!-- list nav -->
+<dir-pagination-controls on-page-change="itemList.pageChanged(newPageNumber)"></dir-pagination-controls>

@@ -1,6 +1,5 @@
 ///<reference path="../typings/typings.d.ts" />
 'use strict';
-declare var Items:Mongo.Collection<IItem>;
 
 Meteor.startup(function ():void {
   /**

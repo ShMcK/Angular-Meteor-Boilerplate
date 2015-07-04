@@ -1,6 +1,6 @@
 ///<reference path="../typings/typings.d.ts" />
 
-declare var Items: Mongo.Collection<IItem>,
+declare var Items:Mongo.Collection<IItem>,
   SimpleSchema:any;
 
 Items = new Mongo.Collection<IItem>('items');
@@ -50,14 +50,13 @@ Schemas.Item = new SimpleSchema({
     type: [String],
     optional: true
   },
-  author: {
+  owner: {
     type: String,
     optional: true
   },
-  userId: {
+  author: {
     type: String,
     optional: true
-    //editable: ['admin']
   }
 });
 
@@ -67,9 +66,19 @@ Items.attachSchema(Schemas.Item);
 
 /**
  * Security Restriction
+ * todo: refactor
  * @type {Mongo.Collection.allow}
  */
 Items.allow({
-  update: function () { return false; },
-  remove: function () { return false; }
+  insert: function (userId:string, item:IItem) {
+    return userId && item.owner === userId;
+  },
+  /* fields: array of keys, ex: ['title', 'body'] */
+  /* modifier: raw Mongo modifier, ex: {$set: {'title': "Item 1"}, $inc: {upvotes: 1}}.*/
+  update: function (userId:string, item:IItem, fields:string[], modifier) {
+    return userId && item.owner === userId;
+  },
+  remove: function (userId:string, item:IItem) {
+    return userId && item.owner === userId;
+  }
 });

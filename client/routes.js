@@ -16,4 +16,8 @@ angular.module('app')
         template: '<secondary></secondary>'
     });
 });
+/* require user for route */
+//"currentUser": ["$meteor", function($meteor:angular.meteor.IMeteorService){
+//  return $meteor.requireUser();
+//}]
 //# sourceMappingURL=routes.js.map

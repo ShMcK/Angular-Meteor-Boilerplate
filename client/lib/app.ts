@@ -18,6 +18,7 @@ angular.module('app', [
   'angular-meteor',
   'ui.router',
   'pascalprecht.translate',
+  'angularUtils.directives.dirPagination',
 
   /* load components */
   'shmck.accounts',

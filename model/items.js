@@ -42,11 +42,11 @@ Schemas.Item = new SimpleSchema({
         type: [String],
         optional: true
     },
-    author: {
+    owner: {
         type: String,
         optional: true
     },
-    userId: {
+    author: {
         type: String,
         optional: true
     }
@@ -55,10 +55,20 @@ Schemas.Item = new SimpleSchema({
 Items.attachSchema(Schemas.Item);
 /**
  * Security Restriction
+ * todo: refactor
  * @type {Mongo.Collection.allow}
  */
 Items.allow({
-    update: function () { return false; },
-    remove: function () { return false; }
+    insert: function (userId, item) {
+        return userId && item.owner === userId;
+    },
+    /* fields: array of keys, ex: ['title', 'body'] */
+    /* modifier: raw Mongo modifier, ex: {$set: {'title': "Item 1"}, $inc: {upvotes: 1}}.*/
+    update: function (userId, item, fields, modifier) {
+        return userId && item.owner === userId;
+    },
+    remove: function (userId, item) {
+        return userId && item.owner === userId;
+    }
 });
 //# sourceMappingURL=items.js.map

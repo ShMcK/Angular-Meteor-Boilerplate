@@ -41,15 +41,12 @@ angular:angular-material
 tinque:angular-translate
 
 # Pagination
-#tmeasday:publish-counts
-#angularutils:pagination
+tmeasday:publish-counts
+angularutils:pagination
 
 # Models
 aldeed:simple-schema
 aldeed:collection2
-
-# Remove this
-insecure
 
 # Telescope
 #telescope:scoring

@@ -9,8 +9,9 @@
     <span flex></span>
     <!-- accounts -->
     <md-button ui-sref="login" ng-hide="$root.currentUser" translate="ACCOUNTS.LOGIN" aria-label="Login"></md-button>
-    <md-button ui-sref="register" ng-hide="$root.currentUser" translate="ACCOUNTS.REGISTER"
-               aria-label="Sign up"></md-button>
+    <!--<md-button ui-sref="register" ng-hide="$root.currentUser" translate="ACCOUNTS.REGISTER"-->
+               <!--aria-label="Sign up"></md-button>-->
+    <!-- profile -->
     <div ng-show="$root.currentUser" class="accounts--profile">
       <a ui-sref="profile">{{ $root.currentUser.emails[0].address }}</a>
     </div>

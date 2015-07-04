@@ -1,5 +1,6 @@
 ///<reference path="../typings.d.ts" />
 declare var Items: Mongo.Collection<IItem>;
+declare var Counts: any; // tmeasday:publish-counts package
 
 interface IItem {
   id?: string;
@@ -15,6 +16,22 @@ interface IItem {
   upVoters?: [string];
   downVotes?: number;
   downVoters?: [string];
+}
+
+interface IItemList {
+  page: number;
+  perPage: number;
+  sort: {
+    [key:string]: number;
+  }
+}
+
+interface ICollectionOptions {
+  limit: number;
+  skip: number;
+  sort: {
+    [key:string]: number;
+  }
 }
 
 // todo: remove option from owner, userId, author, createdAt later

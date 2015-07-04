@@ -319,7 +319,7 @@ declare module angular.meteor {
          * 
          * @param subscriptionName - The subscription name to subscribe to. Exactly like the first parameter in $meteor.subscribe service.
          */
-         subscribe(subscriptionName:string): AngularMeteorCollection2<T, U>;
+         subscribe(subscriptionName:string, options:any): AngularMeteorCollection2<T, U>;
     }
     
     interface ILoginWithExternalService {
