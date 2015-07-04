@@ -28,5 +28,9 @@ angular.module('shmck.accounts')
               return Accounts.logout();
             }]
         }
-      });
+      })
+    .state('profile', {
+        url: '/profile',
+        template: '<shmck-profile></shmck-profile>'
+      })
   });
