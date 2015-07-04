@@ -1,13 +1,11 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
 var MainCtrl = (function () {
-    function MainCtrl($meteor) {
+    function MainCtrl() {
         this.componentName = 'main';
-        this.items = $meteor.collection(Items).subscribe('items');
     }
     return MainCtrl;
 })();
-MainCtrl.$inject = ['$meteor'];
 function main() {
     return {
         templateUrl: 'client/components/main/main.ng.html',

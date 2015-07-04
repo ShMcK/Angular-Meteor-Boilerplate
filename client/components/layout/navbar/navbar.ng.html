@@ -1,6 +1,6 @@
 <md-toolbar>
   <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Settings" ng-click="navbar.Toggler.toggleLeft()" hide-gt-lg>
+    <md-button class="md-icon-button" aria-label="Side Menu" ng-click="navbar.Toggler.toggleLeft()" hide-gt-lg>
       <md-icon md-svg-icon="navigation:menu"></md-icon>
     </md-button>
     <h2>
@@ -8,10 +8,10 @@
     </h2>
     <span flex></span>
     <!-- accounts -->
-    <md-button ui-sref="login" ng-hide="$root.currentUser" translate="ACCOUNTS.LOGIN"></md-button>
-    <md-button ui-sref="register" ng-hide="$root.currentUser" translate="ACCOUNTS.REGISTER"></md-button>
+    <md-button ui-sref="login" ng-hide="$root.currentUser" translate="ACCOUNTS.LOGIN" aria-label="Login"></md-button>
+    <md-button ui-sref="register" ng-hide="$root.currentUser" translate="ACCOUNTS.REGISTER" aria-label="Sign up"></md-button>
     <div ng-show="$root.currentUser">{{ $root.currentUser }}</div>
-    <md-button ui-sref="logout" ng-show="$root.currentUser" translate="ACCOUNTS.LOGOUT"></md-button>
+    <md-button ui-sref="logout" ng-show="$root.currentUser" translate="ACCOUNTS.LOGOUT" aria-label="Logout"></md-button>
 
     <md-button class="md-icon-button" aria-label="More">
       <md-icon md-svg-icon="navigation:more_vert"></md-icon>

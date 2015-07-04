@@ -1,4 +1,5 @@
 ///<reference path="../typings.d.ts" />
+declare var Items: Mongo.Collection<IItem>;
 
 interface IItem {
   id?: string;

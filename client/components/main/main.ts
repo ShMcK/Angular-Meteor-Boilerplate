@@ -1,16 +1,12 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
-declare var Items:Mongo.Collection<IItem>;
 
 class MainCtrl {
   componentName:String;
-  items: angular.meteor.AngularMeteorCollection<IItem>;
-  constructor($meteor: angular.meteor.IMeteorService) {
+  constructor() {
     this.componentName = 'main';
-    this.items = $meteor.collection<IItem>(Items).subscribe('items');
   }
 }
-MainCtrl.$inject = ['$meteor'];
 
 function main():angular.IDirective {
   return {

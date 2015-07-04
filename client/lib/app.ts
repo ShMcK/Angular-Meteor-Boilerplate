@@ -22,6 +22,7 @@ angular.module('app', [
   /* load components */
   'shmck.accounts',
   'shmck.layout',
+  'shmck.items',
 
   /* states */
   'shmck.main',
