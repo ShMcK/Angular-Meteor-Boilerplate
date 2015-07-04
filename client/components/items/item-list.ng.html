@@ -1,6 +1,10 @@
-<p>Published from DB:</p>
-<ul>
-  <li ui-sref="item({itemId: item._id})" ng-repeat="item in itemList.items">
-    {{item.title}}
-  </li>
-</ul>
+<md-list>
+  <md-subheader class="md-no-sticky">Items Published from DB</md-subheader>
+  <md-list-item ng-repeat="item in itemList.items" ui-sref="item({itemId: item._id})">
+    <!--<img alt="{{ item.title }}" ng-src="{{ item.img }}" class="md-avatar"/>-->
+
+    <p>{{ item.title }}</p>
+    <!--<md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat"-->
+    <!--class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>-->
+  </md-list-item>
+</md-list>
