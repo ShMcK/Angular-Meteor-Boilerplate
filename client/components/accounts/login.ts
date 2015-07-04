@@ -2,13 +2,16 @@
 'use strict';
 
 class LoginCtrl {
-  constructor(public Accounts:any) {}
+  page: string;
+  constructor(public Accounts:any) {
+    this.page = 'login';
+  }
 }
 LoginCtrl.$inject = ['Accounts'];
 
 function login():angular.IDirective {
   return {
-    templateUrl: 'client/components/accounts/login.ng.html',
+    templateUrl: 'client/components/accounts/accounts.ng.html',
     controllerAs: 'accounts',
     controller: LoginCtrl
   };

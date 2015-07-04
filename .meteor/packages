@@ -48,6 +48,10 @@ tinque:angular-translate
 aldeed:simple-schema
 aldeed:collection2
 
-#Remove this & pub/sub
+# Remove this
 insecure
 
+# Telescope
+#telescope:scoring
+#telescope:core
+#telescope:lib

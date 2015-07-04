@@ -8,4 +8,5 @@ declare var Items:Mongo.Collection<IItem>;
  */
 Meteor.publish('items', function (options) {
   return Items.find({}, options);
+  // todo: publish limited amount
 });

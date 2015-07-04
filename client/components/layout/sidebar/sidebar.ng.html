@@ -1,13 +1,13 @@
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
   <md-toolbar class="md-theme-indigo">
-    <h1 class="md-toolbar-tools" translate>SIDENAV.HEADER</h1>
+    <h1 class="md-toolbar-tools" translate="SIDENAV.HEADER"></h1>
   </md-toolbar>
   <md-list class="sidebar--list">
-    <!--<md-subheader class="md-no-sticky">{{ 'SIDENAV.SUBHEADER' }}</md-subheader>-->
+    <!--<md-subheader class="md-no-sticky" translate="SIDENAV.SUBHEADER"></md-subheader>-->
     <a ui-sref="{{item.link}}" ng-repeat="item in sideNav.MenuItems.items" >
       <md-list-item class="sidebar--menu-item">
         <!--<md-icon md-svg-icon="{{item.icon}}"></md-icon>-->
-        <p translate>{{item.name}}</p>
+        <p translate="{{item.name}}"></p>
       </md-list-item>
     </a>
     <!--<md-divider></md-divider>-->

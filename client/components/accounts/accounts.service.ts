@@ -10,22 +10,27 @@ class AccountsService {
   error:string;
 
   constructor(public $meteor:angular.meteor.IMeteorService,
-              public $state:angular.ui.IStateService) {
+              public $state:angular.ui.IStateService,
+              private ACCOUNT_SETTINGS) {
     this.credentials = {
+      username: '',
       email: '',
       password: ''
     };
     this.error = '';
   }
 
-  private attempt(e) {
+  /**
+   * Success/Failure Handler
+   * @param e
+   */
+  private handler(e) {
     if (e) {
       // error
-      this.error = `Login error: ${e}`;
+      this.error = `Error: ${e}`;
     } else {
       // success
       this.$state.go('main')
-
     }
   }
 
@@ -36,7 +41,18 @@ class AccountsService {
   login() {
     this.$meteor.loginWithPassword(this.credentials.email, this.credentials.password)
       .then((e) => {
-        this.attempt(e);
+        this.handler(e);
+      });
+  }
+
+  /**
+   * Register new user
+   */
+  register() {
+    //var validEmail = this.verifyEmail(this.credentials.email); // todo
+    this.$meteor.createUser(this.credentials)
+      .then((e) => {
+        this.handler(e);
       });
   }
 
@@ -46,53 +62,75 @@ class AccountsService {
   logout() {
     this.$meteor.logout()
       .then((e) => {
-        this.attempt(e);
+        this.handler(e);
       });
   }
 
   /**
-   * Login with Facebook
+   * Login with OAuth
+   * Facebook, Twitter, Google, Github, Weibo, MeteorDev, Meetup
    * @returns {Promise|Promise<T>}
    */
   loginWithFacebook() {
     this.$meteor.loginWithFacebook({
       requestPermissions: ['email']
     }, (e) => {
-      this.attempt(e);
+      this.handler(e);
     });
   }
 
-  /**
-   * Login with Google
-   * @returns {Promise|Promise<T>}
-   */
   loginWithGoogle() {
     this.$meteor.loginWithGoogle({
       requestPermissions: ['email']
     }, (e) => {
-      this.attempt(e);
+      this.handler(e);
     });
   }
 
-  /**
-   * Login with Twitter
-   * @returns {Promise|Promise<T>}
-   */
   loginWithTwitter() {
-    this.$meteor.loginWithTwitter(
+    this.$meteor.loginWithTwitter({},
+      // uncomment if granted email access from Twitter
       //  {
       //  requestPermissions: ['email']
       //},
       (e) => {
-        this.attempt(e);
+        this.handler(e);
       });
   }
 
+  /**
+   * Password
+   */
+  forgotPassword(credential:{email: string}) {
+    this.$meteor.forgotPassword(credential)
+      .then((e) => {
+        this.handler(e);
+      });
+  }
+
+  resetPassword(token:string, newPassword:string) {
+    this.$meteor.resetPassword(token, newPassword)
+      .then((e) => {
+        this.handler(e);
+      });
+  }
+
+  changePassword(oldPassword:string, newPassword:string) {
+    this.$meteor.changePassword(oldPassword, newPassword)
+      .then((e) => {
+        this.handler(e);
+      });
+  }
+
+
   verifyEmail(token:string) {
-    this.$meteor.verifyEmail(token);
+    this.$meteor.verifyEmail(token)
+      .then((e) => {
+        this.handler(e);
+      })
   }
 }
-AccountsService.$inject = ['$meteor', '$state'];
+AccountsService.$inject = ['$meteor', '$state', 'ACCOUNT_SETTINGS'];
 
 /**
  * Accounts Service

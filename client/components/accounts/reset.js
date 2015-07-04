@@ -1,30 +1,17 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
 var ResetCtrl = (function () {
-    function ResetCtrl($meteor, $state) {
-        this.$meteor = $meteor;
-        this.$state = $state;
-        this.credential = {
-            email: ''
-        };
-        this.error = '';
+    function ResetCtrl(Accounts) {
+        this.Accounts = Accounts;
+        this.page = 'passwordReset';
     }
-    ResetCtrl.prototype.register = function () {
-        var _this = this;
-        this.$meteor.forgotPassword(this.credential)
-            .then(function () {
-            _this.$state.go('main');
-        }, function (e) {
-            _this.error = "Error sending forgot password email: " + e;
-        });
-    };
     return ResetCtrl;
 })();
-ResetCtrl.$inject = ['$meteor', '$state'];
+ResetCtrl.$inject = ['Accounts'];
 function resetPw() {
     return {
-        templateUrl: 'client/components/accounts/reset-password.ng.html',
-        controllerAs: 'rpc',
+        templateUrl: 'client/components/accounts/accounts.ng.html',
+        controllerAs: 'accounts',
         controller: ResetCtrl
     };
 }

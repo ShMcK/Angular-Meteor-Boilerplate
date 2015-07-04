@@ -1,9 +1,8 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
 var SecondaryCtrl = (function () {
-    function SecondaryCtrl($meteor) {
+    function SecondaryCtrl() {
         this.componentName = 'secondary';
-        this.items = $meteor.collection(Items).subscribe('items');
     }
     return SecondaryCtrl;
 })();

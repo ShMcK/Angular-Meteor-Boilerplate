@@ -5,30 +5,21 @@
  *  @type {meteor.startup}
  */
 Meteor.startup(function () {
+    function createTemplate(n) {
+        return {
+            title: "Item " + n,
+            body: "This is item " + n,
+            author: 'admin',
+            createdAt: new Date()
+        };
+    }
     // If no Items
     if (Items.find().count() === 0) {
         console.log('Adding default items...');
-        // Add dummy data
-        var items = [{
-                title: "Item 1",
-                body: "The first item.",
-                author: 'admin',
-                createdAt: new Date()
-            }, {
-                title: "Item 2",
-                body: "The second item.",
-                author: 'admin',
-                createdAt: new Date()
-            }, {
-                title: "Item 3",
-                body: "The third item.",
-                author: 'admin',
-                createdAt: new Date()
-            }];
-        // end dummy data
-        items.forEach(function (item) {
-            Items.insert(item);
-        });
+        // generate dummy 'items' data
+        for (var i = 1; i < 21; i++) {
+            Items.insert(createTemplate(i));
+        }
     }
     else {
         console.log('Loading items...');

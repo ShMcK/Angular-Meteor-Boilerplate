@@ -3,13 +3,14 @@
 var LoginCtrl = (function () {
     function LoginCtrl(Accounts) {
         this.Accounts = Accounts;
+        this.page = 'login';
     }
     return LoginCtrl;
 })();
 LoginCtrl.$inject = ['Accounts'];
 function login() {
     return {
-        templateUrl: 'client/components/accounts/login.ng.html',
+        templateUrl: 'client/components/accounts/accounts.ng.html',
         controllerAs: 'accounts',
         controller: LoginCtrl
     };

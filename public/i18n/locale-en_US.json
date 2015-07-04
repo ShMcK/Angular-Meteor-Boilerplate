@@ -4,6 +4,11 @@
     "HEADER": "Header",
     "SUBHEADER": "Sub-Header"
   },
+  "ACCOUNTS": {
+    "LOGIN": "Login",
+    "REGISTER": "Sign up",
+    "LOGOUT": "Logout"
+  },
   "MAIN": {
     "TITLE": "Main"
   },

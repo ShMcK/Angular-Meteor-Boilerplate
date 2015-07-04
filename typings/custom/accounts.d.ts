@@ -1,6 +1,7 @@
 ///<reference path="../typings.d.ts" />
 
 interface ICredentials{
+  username?: string;
   email: string;
   password: string;
 }

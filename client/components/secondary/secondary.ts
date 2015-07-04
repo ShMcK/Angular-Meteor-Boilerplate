@@ -4,10 +4,8 @@ declare var Items:Mongo.Collection<IItem>;
 
 class SecondaryCtrl {
   componentName:String;
-  items: any; //IItem[];
-  constructor($meteor: angular.meteor.IMeteorService) {
+  constructor() {
     this.componentName = 'secondary';
-    this.items = $meteor.collection(Items).subscribe('items');
   }
 }
 SecondaryCtrl.$inject = ['$meteor'];
