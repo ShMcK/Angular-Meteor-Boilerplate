@@ -17,7 +17,7 @@ var ItemListCtrl = (function () {
         };
         this.itemCount = null;
         this.search = '';
-        $scope.updateOrder = 1;
+        this.updateOrder = 1;
         /**
          * Reactive, runs on $scope change
          * limit | skip | sort | search
@@ -42,12 +42,15 @@ var ItemListCtrl = (function () {
             });
         });
         // watch sort orderProperty
-        $scope.$watch('updateOrder', function () {
-            if ($scope.updateOrder) {
-                _this.list.sort = { title: parseInt($scope.updateOrder) };
+        $scope.$watch('itemList.updateOrder', function () {
+            if (_this.updateOrder) {
+                _this.list.sort = { title: parseInt(_this.updateOrder) };
             }
         });
     }
+    ItemListCtrl.prototype.pageChanged = function (newPage) {
+        this.list.page = newPage;
+    };
     return ItemListCtrl;
 })();
 ItemListCtrl.$inject = ['$meteor', '$scope'];

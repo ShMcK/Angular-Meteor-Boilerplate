@@ -6,6 +6,8 @@ class ItemListCtrl {
   items:angular.meteor.AngularMeteorCollection<IItem>;
   list:IItemList; // page | perPage | sort
   itemCount:any; // total number of items in DB
+  search:string;
+  updateOrder:number;
   //orderProperty:number; // 1 | -1
 
   constructor($meteor:angular.meteor.IMeteorService,
@@ -23,7 +25,7 @@ class ItemListCtrl {
     };
     this.itemCount = null;
     this.search = '';
-    $scope.updateOrder = 1;
+    this.updateOrder = 1;
 
     /**
      * Reactive, runs on $scope change
@@ -51,12 +53,14 @@ class ItemListCtrl {
     });
 
     // watch sort orderProperty
-    $scope.$watch('updateOrder', () => {
-      if ($scope.updateOrder) {
-        this.list.sort = {title: parseInt($scope.updateOrder)}
+    $scope.$watch('itemList.updateOrder', () => {
+      if (this.updateOrder) {
+        this.list.sort = { title: parseInt(this.updateOrder)}
       }
     });
-
+  }
+  pageChanged(newPage) {
+    this.list.page = newPage;
   }
 }
 ItemListCtrl.$inject = ['$meteor', '$scope'];
