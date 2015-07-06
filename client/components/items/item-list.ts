@@ -8,6 +8,7 @@ class ItemListCtrl {
   itemCount:any; // total number of items in DB
   search:string;
   updateOrder:number;
+  busy:boolean;
   //orderProperty:number; // 1 | -1
 
   constructor($meteor:angular.meteor.IMeteorService,
@@ -18,7 +19,7 @@ class ItemListCtrl {
      */
     this.list = {
       page: 1,
-      perPage: 10,
+      perPage: 3,
       sort: {
         title: 1
       }
@@ -26,6 +27,9 @@ class ItemListCtrl {
     this.itemCount = null;
     this.search = '';
     this.updateOrder = 1;
+
+    // loading
+    this.busy = false;
 
     /**
      * Reactive, runs on $scope change
@@ -36,10 +40,11 @@ class ItemListCtrl {
       $meteor.subscribe('items', {
         // $scope.getReactively(string) watches & auto-updates values from the template $scope
         limit: parseInt($scope.getReactively('itemList.list.perPage')),
-        skip: (parseInt($scope.getReactively('itemList.list.page')) - 1) *
-               parseInt($scope.getReactively('itemList.list.sort')),
+        //skip: (parseInt($scope.getReactively('itemList.list.page')) - 1) *
+        //       parseInt($scope.getReactively('itemList.list.sort')),
         sort: $scope.getReactively('itemList.list.sort')
-      }, $scope.getReactively('itemList.search')).then(() => {
+      }, $scope.getReactively('itemList.search'))
+        .then(() => {
         this.itemCount = $meteor.object(Counts, 'numberOfItems', false);
       });
     });
@@ -59,8 +64,16 @@ class ItemListCtrl {
       }
     });
   }
-  pageChanged(newPage) {
-    this.list.page = newPage;
+  //pageChanged(newPage) {
+  //  this.list.page = newPage;
+  //}
+  loadMore() {
+    this.busy = true;
+    console.log('loading...');
+    this.list.perPage += 3;
+    // todo: async timeout until this.items.length === this.list.perPage
+    this.busy = false;
+
   }
 }
 ItemListCtrl.$inject = ['$meteor', '$scope'];

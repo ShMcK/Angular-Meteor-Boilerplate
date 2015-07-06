@@ -18,7 +18,7 @@ angular.module('app', [
   'angular-meteor',
   'ui.router',
   'pascalprecht.translate',
-  'angularUtils.directives.dirPagination',
+  'infinite-scroll',
 
   /* load components */
   'shmck.accounts',

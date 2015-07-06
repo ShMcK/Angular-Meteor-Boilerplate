@@ -10,7 +10,7 @@ var ItemListCtrl = (function () {
          */
         this.list = {
             page: 1,
-            perPage: 10,
+            perPage: 3,
             sort: {
                 title: 1
             }
@@ -18,6 +18,8 @@ var ItemListCtrl = (function () {
         this.itemCount = null;
         this.search = '';
         this.updateOrder = 1;
+        // loading
+        this.busy = false;
         /**
          * Reactive, runs on $scope change
          * limit | skip | sort | search
@@ -27,10 +29,11 @@ var ItemListCtrl = (function () {
             $meteor.subscribe('items', {
                 // $scope.getReactively(string) watches & auto-updates values from the template $scope
                 limit: parseInt($scope.getReactively('itemList.list.perPage')),
-                skip: (parseInt($scope.getReactively('itemList.list.page')) - 1) *
-                    parseInt($scope.getReactively('itemList.list.sort')),
+                //skip: (parseInt($scope.getReactively('itemList.list.page')) - 1) *
+                //       parseInt($scope.getReactively('itemList.list.sort')),
                 sort: $scope.getReactively('itemList.list.sort')
-            }, $scope.getReactively('itemList.search')).then(function () {
+            }, $scope.getReactively('itemList.search'))
+                .then(function () {
                 _this.itemCount = $meteor.object(Counts, 'numberOfItems', false);
             });
         });
@@ -48,8 +51,15 @@ var ItemListCtrl = (function () {
             }
         });
     }
-    ItemListCtrl.prototype.pageChanged = function (newPage) {
-        this.list.page = newPage;
+    //pageChanged(newPage) {
+    //  this.list.page = newPage;
+    //}
+    ItemListCtrl.prototype.loadMore = function () {
+        this.busy = true;
+        console.log('loading...');
+        this.list.perPage += 3;
+        // todo: async timeout until this.items.length === this.list.perPage
+        this.busy = false;
     };
     return ItemListCtrl;
 })();

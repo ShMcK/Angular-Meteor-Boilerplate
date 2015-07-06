@@ -7,6 +7,7 @@ A modular full-featured full-stack boilerplate for Angular-Meteor. Written in Ty
 Front-End:
 * Angular-Material + Icon Sets
 * ngAnimate, ngSanitize, ngTouch, ngAria, ngMessages
+* ngInfiniteScroll
 * Ui-Router Setup
 * Angular-Translate (i18n)
 * Sass
