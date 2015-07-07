@@ -10,20 +10,21 @@
   </select>
 </div>
 
-<md-list class="item-list"
-         infinite-scroll="itemList.loadMore()"
-         infinite-scroll-disabled="itemList.busy"
-         inifinite-scroll-distance="3">
+<md-list class="item-list">
 
-  <md-list-item ng-repeat="item in itemList.items track by $index">
-    <!--<img alt="{{ item.title }}" ng-src="{{ item.img }}" class="md-avatar"/>-->
+  <div infinite-scroll="itemList.loadMore()"
+       infinite-scroll-disabled="itemList.busy"
+       inifinite-scroll-distance="5">
+    <md-list-item ng-repeat="item in itemList.items track by $index">
+      <!--<img alt="{{ item.title }}" ng-src="{{ item.img }}" class="md-avatar"/>-->
 
-    <a ui-sref="item({itemId: item._id})">{{ item.title }}</a>
-    <!--<md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat"-->
-    <!--class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>-->
-  </md-list-item>
-
+      <a ui-sref="item({itemId: item._id})">{{ item.title }}</a>
+      <!--<md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat"-->
+      <!--class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>-->
+    </md-list-item>
+  </div>
 </md-list>
+
 
 <div ng-show="itemList.busy">Loading...</div>
 

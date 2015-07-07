@@ -1,0 +1,32 @@
+/* Grid Styles */
+.main-grid-list md-grid-list {
+  margin: 0;
+}
+
+.main-grid-list .gray {
+  background: #f5f5f5;
+}
+
+.main-grid-list .green {
+  background: #b9f6ca;
+}
+
+.main-grid-list .yellow {
+  background: #ffff8d;
+}
+
+.main-grid-list .blue {
+  background: #84ffff;
+}
+
+.main-grid-list .purple {
+  background: #b388ff;
+}
+
+.main-grid-list .red {
+  background: #ff8a80;
+}
+
+.main-grid-list md-grid-tile {
+  transition: all 400ms ease-out 50ms;
+}

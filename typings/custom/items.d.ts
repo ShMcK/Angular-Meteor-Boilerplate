@@ -1,4 +1,5 @@
 ///<reference path="../typings.d.ts" />
+declare var Fake: any;
 declare var Items: Mongo.Collection<IItem>;
 declare var Counts: any; // tmeasday:publish-counts package
 
