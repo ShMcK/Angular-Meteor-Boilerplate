@@ -45,8 +45,8 @@ class ItemListCtrl {
         sort: $scope.getReactively('itemList.list.sort')
       }, $scope.getReactively('itemList.search'))
         .then(() => {
-        this.itemCount = $meteor.object(Counts, 'numberOfItems', false);
-      });
+          this.itemCount = $meteor.object(Counts, 'numberOfItems', false);
+        });
     });
 
     // update list on sort change
@@ -60,10 +60,11 @@ class ItemListCtrl {
     // watch sort orderProperty
     $scope.$watch('itemList.updateOrder', () => {
       if (this.updateOrder) {
-        this.list.sort = { title: parseInt(this.updateOrder)}
+        this.list.sort = {title: parseInt(this.updateOrder)}
       }
     });
   }
+
   //pageChanged(newPage) {
   //  this.list.page = newPage;
   //}

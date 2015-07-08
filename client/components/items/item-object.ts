@@ -2,12 +2,14 @@
 'use strict';
 
 class ItemObjectCtrl {
-  item: angular.meteor.AngularMeteorObject<IItem>;
-  users: angular.meteor.AngularMeteorCollection<any>;
+  item:angular.meteor.AngularMeteorObject<IItem>;
+  users:angular.meteor.AngularMeteorCollection<any>;
+
   constructor($meteor:angular.meteor.IMeteorService,
               $stateParams:angular.ui.IStateParamsService,
               $scope:angular.IScope) {
 
+    //this.previousState = previousState.name;
     // subscribe to users (get avatar, user email, etc.)
     this.users = $meteor.collection(Meteor.users, false).subscribe('users');
 
@@ -30,7 +32,10 @@ function itemObject():angular.IDirective {
   return {
     templateUrl: 'client/components/items/item-object.ng.html',
     controller: ItemObjectCtrl,
-    controllerAs: 'itemObject'
+    controllerAs: 'itemObject',
+    scope: {
+      previousState: '@'
+    }
   }
 }
 

@@ -9,7 +9,17 @@ angular.module('shmck.items')
     $stateProvider
         .state('item', {
         url: '/items/:itemId',
-        template: '<item-object></item-object>'
+        template: '<item-object previous-state="{{pre.previousState}}"></item-object>',
+        resolve: {
+            previousState: ["$state", function ($state) {
+                    return $state.current.name;
+                }]
+        },
+        // wrap in controller until component router is available
+        controller: function (previousState) {
+            this.previousState = previousState;
+        },
+        controllerAs: 'pre'
     });
 });
 //# sourceMappingURL=route.js.map
