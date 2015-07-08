@@ -1,3 +1,14 @@
-<h2>{{$root.currentUser.username}}</h2>
+<md-content class="accounts">
+  <section class="accounts--profile">
+    <!--<span flex></span>-->
+    <md-card>
+      <img src="http://lorempixel.com/g/640/480" class="md-card-image" alt="Example Image">
+      <md-card-content>
+        <h2 class="md-title">{{$root.currentUser.username}}</h2>
 
-<p>{{ $root.currentUser.emails[0].address}}</p>
+        <p>{{ $root.currentUser.emails[0].address}}</p>
+      </md-card-content>
+    </md-card>
+    <!--<span flex></span>-->
+  </section>
+</md-content>

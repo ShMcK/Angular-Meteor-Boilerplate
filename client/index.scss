@@ -1,3 +1,10 @@
 @import 'styles/colors';
-
 @import 'components/components';
+
+.page {
+
+  .main-content {
+    //height: 100vm;
+    background-color: $primary;
+  }
+}

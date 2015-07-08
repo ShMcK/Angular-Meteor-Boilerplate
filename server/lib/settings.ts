@@ -2,8 +2,12 @@
 'use strict';
 declare var Settings:ISettings;
 
+/**
+ * WARNING:
+ * Incomplete, not working
+ *
+ */
 
-// not working
 var Settings = {
   site: {
     title: 'YOUR_SITE_TITLE', // *

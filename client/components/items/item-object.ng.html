@@ -1,10 +1,17 @@
-<div class="item-object">
-  <h2>{{itemObject.item.title}}</h2>
+<md-content class="item-object">
+  <md-card>
+    <img ng-src="{{itemObject.item.images[0].url}}" alt="{{itemObject.item.images[0].title}}"/>
+    <md-content class="md-padding">
+      <h2>{{itemObject.item.title}}</h2>
 
-  <p>{{itemObject.item.body}}</p>
-  - {{itemObject.item.author}}
-</div>
+      <p>{{itemObject.item.body}}</p>
+      - {{itemObject.item.author}}
+    </md-content>
+  </md-card>
 
-<md-button ui-sref="{{previousState}}" class="md-icon-button" aria-label="Back">
-  <md-icon md-svg-icon="navigation:arrow_back"></md-icon>
-</md-button>
+  <!-- back button -->
+  <md-button ui-sref="{{previousState}}" class="md-icon-button" aria-label="Back">
+    <md-icon md-svg-icon="navigation:arrow_back"></md-icon>
+  </md-button>
+
+</md-content>

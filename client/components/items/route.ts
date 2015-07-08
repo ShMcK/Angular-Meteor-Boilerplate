@@ -18,7 +18,7 @@ angular.module('shmck.items')
         },
         // wrap in controller until component router is available
         controller: function(previousState) {
-          this.previousState = previousState;
+          this.previousState = previousState || 'main';
         },
         controllerAs: 'pre'
       });

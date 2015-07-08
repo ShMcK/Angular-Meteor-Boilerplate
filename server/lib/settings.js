@@ -1,6 +1,10 @@
 ///<reference path="../../typings/typings.d.ts" />
 'use strict';
-// not working
+/**
+ * WARNING:
+ * Incomplete, not working
+ *
+ */
 var Settings = {
     site: {
         title: 'YOUR_SITE_TITLE',

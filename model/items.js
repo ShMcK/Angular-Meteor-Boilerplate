@@ -49,6 +49,18 @@ Schemas.Item = new SimpleSchema({
     author: {
         type: String,
         optional: true
+    },
+    images: {
+        type: [Object],
+        optional: true
+    },
+    'images.$.url': {
+        type: String,
+        optional: true
+    },
+    'images.$.title': {
+        type: String,
+        optional: true
     }
 });
 //Schema.Item.internationalize();

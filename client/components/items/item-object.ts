@@ -9,7 +9,6 @@ class ItemObjectCtrl {
               $stateParams:angular.ui.IStateParamsService,
               $scope:angular.IScope) {
 
-    //this.previousState = previousState.name;
     // subscribe to users (get avatar, user email, etc.)
     this.users = $meteor.collection(Meteor.users, false).subscribe('users');
 

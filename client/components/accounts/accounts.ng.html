@@ -1,82 +1,83 @@
 <md-content layout="row" class="accounts">
   <span flex></span>
-  <md-whiteframe layout="column" flex="60">
+  <md-card>
+    <md-card-content>
+      <!-- accounts social -->
+      <div ng-if="accounts.page !== 'passwordReset'"
+           layout="row" layout-align="space-around center" class="accounts--social">
+        <md-button class="md-fab md-mini" aria-label="Login: Twitter"
+                   ng-click="accounts.Accounts.loginWithTwitter()">
+          <md-icon md-svg-src="icons/ionicons/social-twitter.svg"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Login: Google+"
+                   ng-click="accounts.Accounts.loginWithGoogle()">
+          <md-icon md-svg-src="icons/ionicons/social-google.svg"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Login: Facebook"
+                   ng-click="accounts.Accounts.loginWithFacebook()">
+          <md-icon md-svg-icon="icons/ionicons/social-facebook.svg"></md-icon>
+        </md-button>
+      </div>
 
-    <!-- accounts social -->
-    <div ng-if="accounts.page !== 'passwordReset'"
-        layout="row" layout-align="space-around center" class="accounts--social">
-      <md-button class="md-fab md-mini" aria-label="Login: Twitter"
-          ng-click="accounts.Accounts.loginWithTwitter()">
-        <md-icon md-svg-src="icons/ionicons/social-twitter.svg"></md-icon>
-      </md-button>
-      <md-button class="md-fab md-mini" aria-label="Login: Google+"
-                 ng-click="accounts.Accounts.loginWithGoogle()">
-        <md-icon md-svg-src="icons/ionicons/social-google.svg"></md-icon>
-      </md-button>
-      <md-button class="md-fab md-mini" aria-label="Login: Facebook"
-          ng-click="accounts.Accounts.loginWithFacebook()">
-        <md-icon md-svg-icon="icons/ionicons/social-facebook.svg"></md-icon>
-      </md-button>
-    </div>
+      <!-- accounts error -->
+      <div ng-if="accounts.error" class="accounts--error">
+        <p>{{accounts.Accounts.error}}</p>
+      </div>
 
-    <!-- accounts error -->
-    <div ng-if="accounts.error" class="accounts--error">
-      <p>{{accounts.Accounts.error}}</p>
-    </div>
+      <!-- accounts form -->
+      <form layout="column" class="accounts--form">
 
-    <!-- accounts form -->
-    <form layout="column" class="accounts--form">
+        <md-input-container md-no-float ng-if="accounts.page === 'register'">
+          <md-icon md-svg-icon="action:perm_identity"></md-icon>
+          <input type="text" ng-model="accounts.Accounts.credentials.username"
+                 placeholder="Username" aria-label="username"/>
+        </md-input-container>
 
-      <md-input-container md-no-float ng-if="accounts.page === 'register'">
-        <md-icon md-svg-icon="action:perm_identity"></md-icon>
-        <input type="text" ng-model="accounts.Accounts.credentials.username"
-               placeholder="Username" aria-label="username"/>
-      </md-input-container>
+        <md-input-container md-no-float>
+          <md-icon md-svg-icon="communication:email"></md-icon>
+          <input type="email" ng-model="accounts.Accounts.credentials.email"
+                 placeholder="Email" aria-label="email"/>
+        </md-input-container>
 
-      <md-input-container md-no-float>
-        <md-icon md-svg-icon="communication:email"></md-icon>
-        <input type="email" ng-model="accounts.Accounts.credentials.email"
-               placeholder="Email" aria-label="email"/>
-      </md-input-container>
-
-      <md-input-container md-no-float ng-if="!(accounts.page === 'passwordReset')">
-        <md-icon md-svg-icon="action:lock_open"></md-icon>
-        <input type="password" ng-model="accounts.Accounts.credentials.password"
-               placeholder="Password" aria-label="password"/>
-      </md-input-container>
-
-
-      <!-- accounts submit -->
-      <md-button ng-if="accounts.page === 'login'"
-          class="md-raised md-primary" ng-click="accounts.Accounts.login()"
-                 aria-label="login">Sign In
-      </md-button>
-      <md-button ng-if="accounts.page === 'register'"
-                 class="md-raised md-primary" ng-click="accounts.Accounts.register()"
-                 aria-label="register">Sign Up
-      </md-button>
-      <md-button ng-if="accounts.page === 'passwordReset'"
-                 class="md-raised md-primary" ng-click="accounts.Accounts.forgotPassword()"
-                 aria-label="passwordReset">Send Reset Email
-      </md-button>
-    </form>
+        <md-input-container md-no-float ng-if="!(accounts.page === 'passwordReset')">
+          <md-icon md-svg-icon="action:lock_open"></md-icon>
+          <input type="password" ng-model="accounts.Accounts.credentials.password"
+                 placeholder="Password" aria-label="password"/>
+        </md-input-container>
 
 
-    <!-- accounts redirect -->
-    <div layout="row" layout-align="space-around center" class="accounts--redirect">
-      <md-button ng-if="accounts.page !== 'login'"
-                 class="md-primary md-hue-1 accounts--redirect__link">
-        <a ui-sref="login">Login</a>
-      </md-button>
-      <md-button ng-if="accounts.page !== 'passwordReset'"
-          class="md-primary md-hue-1 accounts--redirect__link">
-        <a ui-sref="resetpw">Forgot password?</a>
-      </md-button>
-      <md-button ng-if="accounts.page !== 'register'"
-          class="md-primary md-hue-1 accounts--redirect__link">
-        <a ui-sref="register">Create an account</a>
-      </md-button>
-    </div>
-  </md-whiteframe>
+        <!-- accounts submit -->
+        <md-button ng-if="accounts.page === 'login'"
+                   class="md-raised md-primary" ng-click="accounts.Accounts.login()"
+                   aria-label="login">Sign In
+        </md-button>
+        <md-button ng-if="accounts.page === 'register'"
+                   class="md-raised md-primary" ng-click="accounts.Accounts.register()"
+                   aria-label="register">Sign Up
+        </md-button>
+        <md-button ng-if="accounts.page === 'passwordReset'"
+                   class="md-raised md-primary" ng-click="accounts.Accounts.forgotPassword()"
+                   aria-label="passwordReset">Send Reset Email
+        </md-button>
+      </form>
+
+
+      <!-- accounts redirect -->
+      <div layout="row" layout-align="space-around center" class="accounts--redirect">
+        <md-button ng-if="accounts.page !== 'login'"
+                   class="md-primary md-hue-1 accounts--redirect__link">
+          <a ui-sref="login">Login</a>
+        </md-button>
+        <md-button ng-if="accounts.page !== 'passwordReset'"
+                   class="md-primary md-hue-1 accounts--redirect__link">
+          <a ui-sref="resetpw">Forgot password?</a>
+        </md-button>
+        <md-button ng-if="accounts.page !== 'register'"
+                   class="md-primary md-hue-1 accounts--redirect__link">
+          <a ui-sref="register">Create an account</a>
+        </md-button>
+      </div>
+    </md-card-content>
+  </md-card>
   <span flex></span>
 </md-content>

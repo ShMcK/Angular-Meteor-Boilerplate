@@ -3,6 +3,12 @@ declare var Fake: any;
 declare var Items: Mongo.Collection<IItem>;
 declare var Counts: any; // tmeasday:publish-counts package
 
+interface IImage {
+  url: string;
+  title?: string;
+  description?: string;
+}
+
 interface IItem {
   id?: string;
   title: string;
@@ -17,6 +23,7 @@ interface IItem {
   upVoters?: [string];
   downVotes?: number;
   downVoters?: [string];
+  images?: IImage[]
 }
 
 interface IItemList {

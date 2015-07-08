@@ -1,4 +1,12 @@
 .accounts {
+  margin: 0;
+  padding: 50px;
+  background-color: $primary;
+  height: 100vm;
+  margin-bottom: 0;
+  md-card {
+    padding: 50px;
+  }
   .accounts--error {
 
   }

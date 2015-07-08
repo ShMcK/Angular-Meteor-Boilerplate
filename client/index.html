@@ -7,24 +7,22 @@
 </head>
 
 <body layout="column">
-<section layout="row" flex>
+<section layout="row" flex class="page">
 
   <shmck-sidebar layout="column" md-is-locked-open="$media('gt-lg')"></shmck-sidebar>
 
-  <div layout="column" flex>
+  <div layout="column" flex class="main-content">
 
     <shmck-navbar></shmck-navbar>
 
 
     <main layout="column" flex>
-      <md-content flex layout-padding>
         <ui-view></ui-view>
-      </md-content>
     </main>
 
-    <footer layout="column" flex>
+    <!--<footer layout="column" flex>-->
       <!--<shmck-footer></shmck-footer>-->
-    </footer>
+    <!--</footer>-->
 
   </div>
 </section>
