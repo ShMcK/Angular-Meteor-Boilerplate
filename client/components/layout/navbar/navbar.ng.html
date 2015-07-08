@@ -13,7 +13,7 @@
                <!--aria-label="Sign up"></md-button>-->
     <!-- profile -->
     <div ng-show="$root.currentUser" class="accounts--profile">
-      <a ui-sref="profile">{{ $root.currentUser.emails[0].address }}</a>
+      <a ui-sref="profile">{{ $root.currentUser.username }}</a>
     </div>
     <md-button ui-sref="logout" ng-show="$root.currentUser" translate="ACCOUNTS.LOGOUT" aria-label="Logout"></md-button>
 

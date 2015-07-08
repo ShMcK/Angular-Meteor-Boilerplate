@@ -15,6 +15,8 @@ Meteor.publish("userData", function () {
         fields: {
           'services.twitter': 1,
           'services.facebook': 1,
+          'services.google': 1
+          /* publish other services here */
         }
       });
   } else {
@@ -33,13 +35,15 @@ Meteor.publish('users', function () {
       username: 1,
       emails: 1,
       profile: 1
+      /* if you need other users oAuth data */
       //'services.twitter': 1,
-      //'services.facebook': 1
+      //'services.facebook': 1,
+      //'services.google': 1
     }
   });
 });
 
-/* Example
+/* Example User Data
 
  {
  _id: "bbca5d6a-2156-41c4-89da-0329e8c99a4f",  // Meteor.userId()

@@ -8,16 +8,25 @@
 class AccountsService {
   credentials:ICredentials;
   error:string;
+  options: {
+    requestPermissions: string[];
+    loginStyle: string;
+  };
 
   constructor(public $meteor:angular.meteor.IMeteorService,
-              public $state:angular.ui.IStateService,
-              private ACCOUNT_SETTINGS) {
+              public $state:angular.ui.IStateService) {
     this.credentials = {
       username: '',
       email: '',
       password: ''
     };
     this.error = '';
+
+    // more OAuth Options: http://docs.meteor.com/#/full/meteor_loginwithexternalservice
+    this.options = {
+      requestPermissions: ['email'],
+      loginStyle: 'popup' // popup | redirect
+    };
   }
 
   /**
@@ -68,31 +77,25 @@ class AccountsService {
 
   /**
    * Login with OAuth
-   * Facebook, Twitter, Google, Github, Weibo, MeteorDev, Meetup
+   * Facebook, Twitter, Google, Github, Weibo, MeteorDevGroup, Meetup
    * @returns {Promise|Promise<T>}
    */
+
   loginWithFacebook() {
-    this.$meteor.loginWithFacebook({
-      requestPermissions: ['email']
-    }, (e) => {
+    this.$meteor.loginWithFacebook(this.options, (e) => {
       this.handler(e);
     });
   }
 
   loginWithGoogle() {
-    this.$meteor.loginWithGoogle({
-      requestPermissions: ['email']
-    }, (e) => {
+    this.$meteor.loginWithGoogle(this.options, (e) => {
       this.handler(e);
     });
   }
 
   loginWithTwitter() {
     this.$meteor.loginWithTwitter({},
-      // uncomment if granted email access from Twitter
-      //  {
-      //  requestPermissions: ['email']
-      //},
+      // Must get official approval for emails from Twitter
       (e) => {
         this.handler(e);
       });
@@ -130,7 +133,7 @@ class AccountsService {
       })
   }
 }
-AccountsService.$inject = ['$meteor', '$state', 'ACCOUNT_SETTINGS'];
+AccountsService.$inject = ['$meteor', '$state'];
 
 /**
  * Accounts Service

@@ -1,8 +1,6 @@
 ///<reference path="../../typings/typings.d.ts" />
 'use strict';
 
-declare var Items:Mongo.Collection<IItem>;
-
 /**
  *  Load Items
  *  @type {meteor.startup}
@@ -40,7 +38,4 @@ Meteor.startup(function () {
   } else {
     console.log('Loading items...');
   }
-}
-
-})
-;
+});

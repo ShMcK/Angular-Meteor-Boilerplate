@@ -13,6 +13,7 @@ Meteor.publish("userData", function () {
             fields: {
                 'services.twitter': 1,
                 'services.facebook': 1,
+                'services.google': 1
             }
         });
     }
@@ -34,7 +35,7 @@ Meteor.publish('users', function () {
         }
     });
 });
-/* Example
+/* Example User Data
 
  {
  _id: "bbca5d6a-2156-41c4-89da-0329e8c99a4f",  // Meteor.userId()

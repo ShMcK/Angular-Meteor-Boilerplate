@@ -5,16 +5,20 @@
  * login, login with OAuth, logout
  */
 var AccountsService = (function () {
-    function AccountsService($meteor, $state, ACCOUNT_SETTINGS) {
+    function AccountsService($meteor, $state) {
         this.$meteor = $meteor;
         this.$state = $state;
-        this.ACCOUNT_SETTINGS = ACCOUNT_SETTINGS;
         this.credentials = {
             username: '',
             email: '',
             password: ''
         };
         this.error = '';
+        // more OAuth Options: http://docs.meteor.com/#/full/meteor_loginwithexternalservice
+        this.options = {
+            requestPermissions: ['email'],
+            loginStyle: 'popup' // popup | redirect
+        };
     }
     /**
      * Success/Failure Handler
@@ -64,32 +68,25 @@ var AccountsService = (function () {
     };
     /**
      * Login with OAuth
-     * Facebook, Twitter, Google, Github, Weibo, MeteorDev, Meetup
+     * Facebook, Twitter, Google, Github, Weibo, MeteorDevGroup, Meetup
      * @returns {Promise|Promise<T>}
      */
     AccountsService.prototype.loginWithFacebook = function () {
         var _this = this;
-        this.$meteor.loginWithFacebook({
-            requestPermissions: ['email']
-        }, function (e) {
+        this.$meteor.loginWithFacebook(this.options, function (e) {
             _this.handler(e);
         });
     };
     AccountsService.prototype.loginWithGoogle = function () {
         var _this = this;
-        this.$meteor.loginWithGoogle({
-            requestPermissions: ['email']
-        }, function (e) {
+        this.$meteor.loginWithGoogle(this.options, function (e) {
             _this.handler(e);
         });
     };
     AccountsService.prototype.loginWithTwitter = function () {
         var _this = this;
         this.$meteor.loginWithTwitter({}, 
-        // uncomment if granted email access from Twitter
-        //  {
-        //  requestPermissions: ['email']
-        //},
+        // Must get official approval for emails from Twitter
         function (e) {
             _this.handler(e);
         });
@@ -127,7 +124,7 @@ var AccountsService = (function () {
     };
     return AccountsService;
 })();
-AccountsService.$inject = ['$meteor', '$state', 'ACCOUNT_SETTINGS'];
+AccountsService.$inject = ['$meteor', '$state'];
 /**
  * Accounts Service
  * handles login, oAuth, logout
