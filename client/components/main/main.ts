@@ -3,6 +3,7 @@
 
 class MainCtrl {
   componentName:String;
+
   constructor() {
     this.componentName = 'main';
   }
@@ -21,5 +22,4 @@ function main():angular.IDirective {
  * default home page
  * @type {angular.module}
  */
-angular.module('shmck.main')
-  .directive('shmckMain', main);
+angular.module('shmck.main').directive('shmckMain', main);

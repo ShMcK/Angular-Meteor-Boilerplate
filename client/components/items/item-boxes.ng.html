@@ -1,0 +1,20 @@
+<md-grid-list
+    md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+    md-row-height-gt-md="1:1" md-row-height="2:2"
+    md-gutter="12px" md-gutter-gt-sm="8px"
+    class="main-grid-list">
+
+  <!-- boxes -->
+  <md-grid-tile ng-repeat="item in box.items track by $index"
+                class="{{box.boxes[$index].color}}"
+                md-rowspan="{{box.boxes[$index].row || 1}}"
+                md-colspan="{{box.boxes[$index].col || 1}}"
+                md-colspan-sm="{{box.boxes[$index].smCol || 1}}">
+    <a ui-sref="item({itemId: item._id})">
+      <md-grid-tile-footer>
+        <h3>{{item.title}}</h3>
+      </md-grid-tile-footer>
+    </a>
+  </md-grid-tile>
+
+</md-grid-list>
