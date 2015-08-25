@@ -17,3 +17,4 @@ User Accounts:
 * OAuth: Facebook, Twitter, Google, Github (options)
 * Email verification through Kickbox.io (option)
 * Welcome Email (option)
+* 
