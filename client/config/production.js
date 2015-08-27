@@ -2,8 +2,8 @@
 var MODE = 'development'; // change later
 function productionOptimizations($compileProvider, $httpProvider) {
     if (MODE === 'production') {
-//        $compileProvider.debugInfoEnabled(false);
-//        $httpProvider.useApplyAsync(true);
+        $compileProvider.debugInfoEnabled(false);
+        $httpProvider.useApplyAsync(true);
     }
 }
 /**
