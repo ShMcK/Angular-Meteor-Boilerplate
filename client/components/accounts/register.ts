@@ -8,13 +8,13 @@ class RegisterCtrl {
     this.page = 'register';
   }
 }
-RegisterCtrl.$inject = ['Accounts'];
+//RegisterCtrl.$inject = ['Accounts'];
 
-function register ():angular.IDirective {
+function register (Accounts:any):angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/accounts.ng.html',
     controllerAs: 'accounts',
-    controller: RegisterCtrl
+    controller: ['Accounts', RegisterCtrl]
   };
 }
 

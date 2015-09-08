@@ -12,7 +12,7 @@ class ItemListCtrl {
   //orderProperty:number; // 1 | -1
 
   constructor($meteor:angular.meteor.IMeteorService,
-              $scope:angular.IScope) {
+              $scope:angular.meteor.IScope) {
     /**
      * Defaults
      * page | perPage | sort | itemCount | search | orderProperty
@@ -39,7 +39,7 @@ class ItemListCtrl {
     $meteor.autorun($scope, () => {
       $meteor.subscribe('items', {
         // $scope.getReactively(string) watches & auto-updates values from the template $scope
-        limit: parseInt($scope.getReactively('itemList.list.perPage')),
+        limit: $scope.getReactively('itemList.list.perPage'),
         //skip: (parseInt($scope.getReactively('itemList.list.page')) - 1) *
         //       parseInt($scope.getReactively('itemList.list.sort')),
         sort: $scope.getReactively('itemList.list.sort')
@@ -60,7 +60,7 @@ class ItemListCtrl {
     // watch sort orderProperty
     $scope.$watch('itemList.updateOrder', () => {
       if (this.updateOrder) {
-        this.list.sort = {title: parseInt(this.updateOrder)}
+        this.list.sort = {title: parseInt(this.updateOrder + '')}
       }
     });
   }
@@ -77,13 +77,13 @@ class ItemListCtrl {
 
   }
 }
-ItemListCtrl.$inject = ['$meteor', '$scope'];
+//ItemListCtrl.$inject = ['$meteor', '$scope'];
 
 function itemList():angular.IDirective {
   return {
     templateUrl: 'client/components/items/item-list.ng.html',
     controllerAs: 'itemList',
-    controller: ItemListCtrl
+    controller:  ['$meteor', '$scope', ItemListCtrl ]
   };
 }
 
@@ -93,4 +93,7 @@ function itemList():angular.IDirective {
  * @type {angular.module}
  */
 angular.module('shmck.items')
-  .directive('itemList', itemList);
+  .directive('itemList',   itemList);
+  
+  
+  

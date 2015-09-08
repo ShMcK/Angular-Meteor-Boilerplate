@@ -326,5 +326,7 @@ declare module angular.meteor {
         (options: Meteor.LoginWithExternalServiceOptions): angular.IPromise<void>;
     }
     
-    interface ReactiveResult { }
+    interface ReactiveResult { 
+        get():any;
+    }
 }

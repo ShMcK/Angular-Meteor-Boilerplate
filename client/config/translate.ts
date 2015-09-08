@@ -35,5 +35,5 @@ function languageLoader($http:angular.IHttpService) {
  * @type {angular.module}
  */
 angular.module('app')
-  .config(translate)
-  .factory('languageLoader', languageLoader);
+  .config(['$translateProvider',translate])
+  .factory('languageLoader', ['$http', languageLoader]);

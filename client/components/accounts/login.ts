@@ -7,13 +7,13 @@ class LoginCtrl {
     this.page = 'login';
   }
 }
-LoginCtrl.$inject = ['Accounts'];
+//LoginCtrl.$inject = ['Accounts'];
 
-function login():angular.IDirective {
+function login(Accounts:any):angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/accounts.ng.html',
     controllerAs: 'accounts',
-    controller: LoginCtrl
+    controller:  ['Accounts',LoginCtrl]
   };
 }
 /**
@@ -21,4 +21,4 @@ function login():angular.IDirective {
  * @type {angular.module}
  */
 angular.module('shmck.accounts')
-  .directive('shmckLogin', login);
+  .directive('shmckLogin',login);

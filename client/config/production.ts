@@ -1,6 +1,6 @@
 ///<reference path="../../typings/typings.d.ts" />
 
-var MODE = 'development'; // change later
+var MODE = 'production'; // change later
 
 function productionOptimizations($compileProvider:angular.ICompileProvider, $httpProvider:angular.IHttpProvider):void {
   if (MODE === 'production') {
@@ -14,4 +14,4 @@ function productionOptimizations($compileProvider:angular.ICompileProvider, $htt
  * @type {angular.module}
  */
 angular.module("app")
-  .config(productionOptimizations);
+  .config(['$compileProvider','$httpProvider',productionOptimizations]);

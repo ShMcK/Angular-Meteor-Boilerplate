@@ -1,4 +1,5 @@
-///<reference path="../../typings/typings.d.ts" />
+///<reference path="../../typings/typings.d.ts" /> 
+///<reference path="../../model/items.ts" />
 'use strict';
 
 /**

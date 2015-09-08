@@ -5,7 +5,7 @@
  * @type {angular.module}
  */
 angular.module("app")
-  .config(themeIcons);
+  .config(['$mdIconProvider',themeIcons]);
 
 function themeIcons($mdIconProvider:angular.material.MDIconProvider):void {
   var iconSets = [
@@ -16,7 +16,7 @@ function themeIcons($mdIconProvider:angular.material.MDIconProvider):void {
     'alert', 'social'];
 
   angular.forEach(iconSets, function (iconSet:string):void {
-    $mdIconProvider.iconSet(iconSet, `/icons/${iconSet}-icons.svg`, 24);
+    $mdIconProvider.iconSet(iconSet, `/icons/${iconSet}-icons.svg`, 24+'');
   });
 
 }

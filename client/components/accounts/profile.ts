@@ -7,13 +7,13 @@ class ProfileCtrl {
               $meteor:angular.meteor.IMeteorService) {
   }
 }
-ProfileCtrl.$inject = ['Accounts'];
+//ProfileCtrl.$inject = ['Accounts'];
 
-function profile():angular.IDirective {
+function profile(Accounts:any, $meteor:angular.meteor.IMeteorService):angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/profile.ng.html',
     controllerAs: 'accounts',
-    controller: ProfileCtrl
+    controller: ['Accounts','$meteor', ProfileCtrl]
   };
 }
 /**

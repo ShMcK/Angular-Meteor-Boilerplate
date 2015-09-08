@@ -13,7 +13,7 @@ Front-End:
 * Angular-Translate (i18n)
 * Sass
 
-User Accounts:
+Use r Accounts:
 * Material Ui-Accounts Setup
 * OAuth: Facebook, Twitter, Google, Github (options)
 * Email verification through Kickbox.io (option)

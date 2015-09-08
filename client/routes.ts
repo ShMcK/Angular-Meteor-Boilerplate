@@ -6,7 +6,7 @@
  * @type {angular.module}
  */
 angular.module('app')
-  .config(function ($stateProvider:angular.ui.IStateProvider) {
+  .config(['$stateProvider',function ($stateProvider:angular.ui.IStateProvider) {
 
     $stateProvider
       .state('main', {
@@ -17,7 +17,7 @@ angular.module('app')
         url: '/secondary',
         template: '<secondary></secondary>'
       });
-  });
+  }]);
 
 
   /* require user for route */

@@ -9,12 +9,12 @@ angular.module('app')
 /**
  * Router Config
  */
-  .config(function ($urlRouterProvider:angular.ui.IUrlRouterProvider, $locationProvider:angular.ILocationProvider):void {
+  .config(['$urlRouterProvider','$locationProvider', function ($urlRouterProvider:angular.ui.IUrlRouterProvider, $locationProvider:angular.ILocationProvider):void {
     // removes /#/
     $locationProvider.html5Mode(true);
     // unregistered routes redirect to '/'
     $urlRouterProvider.otherwise('/');
-  })
+  }])
 /**
  * Authorization required (user needs permission)
  * Redirects to main

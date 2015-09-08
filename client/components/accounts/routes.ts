@@ -6,7 +6,7 @@
  * @type {angular.module}
  */
 angular.module('shmck.accounts')
-  .config(function ($stateProvider:angular.ui.IStateProvider) {
+  .config(['$stateProvider',function ($stateProvider:angular.ui.IStateProvider) {
     $stateProvider
       .state('login', {
         url: '/login',
@@ -33,4 +33,4 @@ angular.module('shmck.accounts')
         url: '/profile',
         template: '<shmck-profile></shmck-profile>'
       })
-  });
+  }]);

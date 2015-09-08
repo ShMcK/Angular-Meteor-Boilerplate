@@ -67,7 +67,7 @@ Meteor.methods({
       title: Settings.site.title
     });
     return Email.send({
-      to: user.emails[0],
+      to: user.emails[0].address,
       from: Settings.welcomeEmail.from,
       subject: Settings.welcomeEmail.subject,
       html: emailTemplate

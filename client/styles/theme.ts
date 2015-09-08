@@ -6,8 +6,8 @@
  * @type {angular.module}
  */
 angular.module('app')
-  .config(function($mdThemingProvider:angular.material.MDThemingProvider) {
+  .config(['$mdThemingProvider',function($mdThemingProvider:angular.material.MDThemingProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('deep-orange')
       .accentPalette('grey');
-  });
+  }]);

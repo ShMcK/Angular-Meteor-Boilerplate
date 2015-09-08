@@ -34,7 +34,9 @@ angular.module('app', [
  * Bootstrap App (ng-app)
  */
 function onReady() {
-  angular.bootstrap(document, ['app']);
+  angular.bootstrap(document, ['app'], {
+   strictDi: true
+});
 }
 
 /**

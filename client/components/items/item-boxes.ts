@@ -42,13 +42,13 @@ class ItemBoxCtrl {
     });
   }
 }
-ItemBoxCtrl.$inject = ['$meteor'];
+//ItemBoxCtrl.$inject = ['$meteor'];
 
 
 function itemBoxes ():angular.IDirective {
   return {
     templateUrl: 'client/components/items/item-boxes.ng.html',
-    controller: ItemBoxCtrl,
+    controller: ['$meteor', ItemBoxCtrl] ,
     controllerAs: 'box'
   };
 }
@@ -57,4 +57,4 @@ function itemBoxes ():angular.IDirective {
  * Item Boxes
  * @type {angular.module}
  */
-angular.module('shmck.items').directive('itemBoxes', itemBoxes);
+angular.module('shmck.items').directive('itemBoxes',  itemBoxes );
