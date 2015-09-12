@@ -1,20 +1,20 @@
 ///<reference path="../../../typings/typings.d.ts" />
 'use strict';
-declare var Items:Mongo.Collection<IItem>;
+declare var Items:any;
 
 class SecondaryCtrl {
   componentName:String;
-  constructor() {
+  constructor($meteor:angular.meteor.IMeteorService) {
     this.componentName = 'secondary';
   }
 }
-SecondaryCtrl.$inject = ['$meteor'];
+//SecondaryCtrl.$inject = ['$meteor'];
 
 function secondary():angular.IDirective {
   return {
     templateUrl: 'client/components/secondary/secondary.ng.html',
     controllerAs: 'secondary',
-    controller: SecondaryCtrl,
+    controller: ['$meteor', SecondaryCtrl],
   };
 }
 
@@ -23,4 +23,4 @@ function secondary():angular.IDirective {
  * @type {angular.module}
  */
 angular.module('shmck.secondary')
-  .directive('secondary', secondary);
+  .directive('secondary',  secondary);

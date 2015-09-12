@@ -27,7 +27,7 @@ class Toggler {
       //});
   }
 }
-Toggler.$inject = ['$mdUtil', '$mdSidenav', '$log'];
+//Toggler.$inject = ['$mdUtil', '$mdSidenav', '$log'];
 
 /**
  * Page
@@ -35,4 +35,4 @@ Toggler.$inject = ['$mdUtil', '$mdSidenav', '$log'];
  * @type {angular.module}
  */
 angular.module('shmck.layout')
-  .service('Toggler', Toggler);
+  .service('Toggler',  ['$mdUtil', '$mdSidenav', '$log',Toggler]);

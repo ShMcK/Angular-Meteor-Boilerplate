@@ -7,13 +7,13 @@ class ResetCtrl {
     this.page = 'passwordReset';
   }
 }
-ResetCtrl.$inject = ['Accounts'];
+//ResetCtrl.$inject = ['Accounts'];
 
-function resetPw():angular.IDirective {
+function resetPw(Accounts:any):angular.IDirective {
   return {
     templateUrl: 'client/components/accounts/accounts.ng.html',
     controllerAs: 'accounts',
-    controller: ResetCtrl
+    controller: ['Accounts', ResetCtrl]
   };
 }
 

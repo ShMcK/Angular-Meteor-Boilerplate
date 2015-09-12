@@ -1,13 +1,15 @@
 ///<reference path="../typings/typings.d.ts" />
 'use strict';
 
+declare var config:any;
+
 Meteor.startup(function ():void {
   /**
    * Account Methods
    * @type {meteor.methods}
    */
   Meteor.methods({
-    validateEmailAddress: function (address:string):boolean {
+    validateEmailAddress: function (address:string):Promise<Object> {
       check(address, String);
       return new Promise(function (resolve, reject) {
         HTTP.call("GET", "https://api.kickbox.io/v1/verify", {

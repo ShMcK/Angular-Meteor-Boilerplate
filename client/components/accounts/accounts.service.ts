@@ -8,10 +8,7 @@
 class AccountsService {
   credentials:ICredentials;
   error:string;
-  options: {
-    requestPermissions: string[];
-    loginStyle: string;
-  };
+  options: any;
 
   constructor(public $meteor:angular.meteor.IMeteorService,
               public $state:angular.ui.IStateService) {
@@ -82,23 +79,21 @@ class AccountsService {
    */
 
   loginWithFacebook() {
-    this.$meteor.loginWithFacebook(this.options, (e) => {
+    this.$meteor.loginWithFacebook(this.options).then((e) => {
       this.handler(e);
     });
   }
 
   loginWithGoogle() {
-    this.$meteor.loginWithGoogle(this.options, (e) => {
+    this.$meteor.loginWithGoogle(this.options).then((e) => {
       this.handler(e);
     });
   }
 
   loginWithTwitter() {
-    this.$meteor.loginWithTwitter({},
-      // Must get official approval for emails from Twitter
-      (e) => {
-        this.handler(e);
-      });
+    this.$meteor.loginWithTwitter({}).then((e) => {
+      this.handler(e);
+    });
   }
 
   /**
@@ -133,11 +128,11 @@ class AccountsService {
       })
   }
 }
-AccountsService.$inject = ['$meteor', '$state'];
+//AccountsService.$inject = ['$meteor', '$state'];
 
 /**
  * Accounts Service
  * handles login, oAuth, logout
  * @type {angular.module}
  */
-angular.module('shmck.accounts').service('Accounts', AccountsService);
+angular.module('shmck.accounts').service('Accounts',['$meteor', '$state', AccountsService]);

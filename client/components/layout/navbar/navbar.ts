@@ -10,7 +10,7 @@ function shmckNavbar():angular.IDirective {
   return {
     templateUrl: 'client/components/layout/navbar/navbar.ng.html',
     controllerAs: 'navbar',
-    controller: NavbarCtrl
+    controller:  NavbarCtrl 
   };
 }
 
@@ -19,4 +19,4 @@ function shmckNavbar():angular.IDirective {
  * @type {angular.module}
  */
 angular.module('shmck.layout')
-  .directive('shmckNavbar', shmckNavbar);
+  .directive('shmckNavbar',  shmckNavbar);

@@ -62,7 +62,8 @@ declare module Meteor {
 	}
 
 	function loginWithMeteorDeveloperAccount(options?: Meteor.LoginWithExternalServiceOptions, callback?: Function): void;
-	function loginWithFacebook(options?: Meteor.LoginWithExternalServiceOptions, callback?: Function): void;
+	//function loginWithFacebook(options?: Meteor.LoginWithExternalServiceOptions, callback?: Function): void;
+	function loginWithFacebook(options?: any, callback?: Function): void;
 	function loginWithGithub(options?: Meteor.LoginWithExternalServiceOptions, callback?: Function): void;
 	function loginWithGoogle(options?: Meteor.LoginWithExternalServiceOptions, callback?: Function): void;
 	function loginWithMeetup(options?: Meteor.LoginWithExternalServiceOptions, callback?: Function): void;

@@ -4,13 +4,13 @@ class SidebarCtrl {
   constructor(public Toggler, public MenuItems) {}
   // todo: Toggler.close() button
 }
-SidebarCtrl.$inject = ['Toggler', 'MenuItems'];
+//SidebarCtrl.$inject = ['Toggler', 'MenuItems'];
 
-function sidebar():angular.IDirective {
+function sidebar(Toggler:any, MenuItems:any ):angular.IDirective {
   return {
     templateUrl: 'client/components/layout/sidebar/sidebar.ng.html',
     controllerAs: 'sideNav',
-    controller: SidebarCtrl
+    controller: function() { return new SidebarCtrl(Toggler,MenuItems); }
   };
 }
 
@@ -19,4 +19,4 @@ function sidebar():angular.IDirective {
  * @type {angular.module}
  */
 angular.module('shmck.layout')
-  .directive('shmckSidebar', sidebar);
+  .directive('shmckSidebar',  ['Toggler', 'MenuItems', sidebar]);

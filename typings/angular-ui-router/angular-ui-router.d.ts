@@ -24,7 +24,7 @@ declare module angular.ui {
         /**
          * A controller paired to the state. Function OR name as String
          */
-        controller?: Function | string;
+        controller?: any;
         controllerAs?: string;
         /**
          * Function (injectable), returns the actual controller function or string.

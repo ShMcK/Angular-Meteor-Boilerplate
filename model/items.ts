@@ -1,10 +1,11 @@
 ///<reference path="../typings/typings.d.ts" />
 
 declare var SimpleSchema:any;
-
+declare var Items:any;
 Items = new Mongo.Collection<IItem>('items');
 
 var Schemas:any = {};
+
 
 Schemas.Item = new SimpleSchema({
   _id: {
